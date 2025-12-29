@@ -12,6 +12,18 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip' # Speeds up future runs
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          # We add these two just in case they aren't in your requirements
+          pip install jupyter nbformat
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
