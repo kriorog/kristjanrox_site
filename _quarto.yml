@@ -1,0 +1,44 @@
+project:
+  type: website
+
+website:
+  # title: "Kristjan Röx"
+  site-url: "https://kriorog.github.io/kristjanrox_site/"
+  description: "Röx website"
+  favicon: "figures/rox_logo_transparent.png"
+  draft-mode: gone
+  
+  page-footer: 
+    left: "Copyright Kristjan Röx. All rights reserved."
+    border: true
+
+  navbar:
+    logo: "figures/rox_logo_transparent.png"
+    background: dark 
+    left:
+      - href: index.qmd
+        text: Articles
+      - href: about.qmd
+        text: About
+    
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/kristjanrox/
+      - icon: envelope
+        href: mailto:kriorog@eremreykjavik.com
+      - icon: rss
+        href: index.xml
+      
+format:
+  html:
+    theme: journal
+    toc: true
+    title-block-banner: true
+    highlight-style: atom-one
+    smooth-scroll: true
+    html-math-method: mathjax
+
+editor: visual
+
+resources:
+  - CNAME

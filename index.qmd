@@ -1,0 +1,9 @@
+---
+listing:
+  contents: articles
+  sort: "date desc"
+  type: grid
+  categories: true
+  feed:
+      title: "Kristjan Röx"
+---
