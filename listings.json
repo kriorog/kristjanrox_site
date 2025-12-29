@@ -1,6 +1,8 @@
 [
   {
     "listing": "/index.html",
-    "items": []
+    "items": [
+      "/articles/monty_hall/monty_hall.html"
+    ]
   }
 ]

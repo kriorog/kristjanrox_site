@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kriorog.github.io/kristjanrox_site/about.html</loc>
-    <lastmod>2025-12-29T21:17:31.375Z</lastmod>
+    <loc>https://kriorog.github.io/kristjanrox_site/articles/monty_hall/monty_hall.html</loc>
+    <lastmod>2025-12-29T22:01:37.655Z</lastmod>
   </url>
   <url>
     <loc>https://kriorog.github.io/kristjanrox_site/index.html</loc>
-    <lastmod>2025-12-29T21:17:31.377Z</lastmod>
+    <lastmod>2025-12-29T22:01:37.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kriorog.github.io/kristjanrox_site/about.html</loc>
+    <lastmod>2025-12-29T22:01:37.652Z</lastmod>
   </url>
 </urlset>
