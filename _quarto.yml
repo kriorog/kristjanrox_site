@@ -38,7 +38,7 @@ format:
     smooth-scroll: true
     html-math-method: mathjax
 
-editor: visual
+editor: source # other option is visual
 
 resources:
   - CNAME
