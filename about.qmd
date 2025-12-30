@@ -1,5 +1,5 @@
 ---
-title: Kristjan Röx
+title: about
 toc: false
 about:
   template: trestles
