@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kriorog.github.io/kristjanrox_site/articles/newton 2nd law/newton_2nd_law.html</loc>
-    <lastmod>2025-12-30T17:01:25.785Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kriorog.github.io/kristjanrox_site/articles/sadi carnot/sadi_carnot.html</loc>
-    <lastmod>2025-12-30T17:01:25.786Z</lastmod>
+    <loc>https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/newton_2nd_law.html</loc>
+    <lastmod>2025-12-30T19:56:18.403Z</lastmod>
   </url>
   <url>
     <loc>https://kriorog.github.io/kristjanrox_site/index.html</loc>
-    <lastmod>2025-12-30T17:01:25.788Z</lastmod>
+    <lastmod>2025-12-30T19:56:18.406Z</lastmod>
   </url>
   <url>
     <loc>https://kriorog.github.io/kristjanrox_site/about.html</loc>
-    <lastmod>2025-12-30T17:01:25.783Z</lastmod>
+    <lastmod>2025-12-30T19:56:18.400Z</lastmod>
   </url>
   <url>
-    <loc>https://kriorog.github.io/kristjanrox_site/articles/monty_hall/monty_hall.html</loc>
-    <lastmod>2025-12-30T17:01:25.785Z</lastmod>
+    <loc>https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/monty_hall.html</loc>
+    <lastmod>2025-12-30T19:56:18.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/sadi_carnot.html</loc>
+    <lastmod>2025-12-30T19:56:18.404Z</lastmod>
   </url>
 </urlset>

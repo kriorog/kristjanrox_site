@@ -14,7 +14,7 @@
 <item>
   <title>Relative efficiency - a la Sadi Carnot</title>
   <dc:creator>Röx </dc:creator>
-  <link>https://kriorog.github.io/kristjanrox_site/articles/sadi carnot/sadi_carnot.html</link>
+  <link>https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/sadi_carnot.html</link>
   <description><![CDATA[ 
 
 
@@ -63,14 +63,14 @@
 </section>
 
  ]]></description>
-  <guid>https://kriorog.github.io/kristjanrox_site/articles/sadi carnot/sadi_carnot.html</guid>
+  <guid>https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/sadi_carnot.html</guid>
   <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/sadi carnot/figures/Sadi_Carnot.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/figures/Sadi_Carnot.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Newton’s 2nd Law - a bit more than you think</title>
   <dc:creator>Röx </dc:creator>
-  <link>https://kriorog.github.io/kristjanrox_site/articles/newton 2nd law/newton_2nd_law.html</link>
+  <link>https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/newton_2nd_law.html</link>
   <description><![CDATA[ 
 
 
@@ -114,8 +114,8 @@
 <section id="a-tangent---mass-in-other-contexts" class="level2">
 <h2 class="anchored" data-anchor-id="a-tangent---mass-in-other-contexts">A tangent - mass in other contexts</h2>
 <p>Let’s venture off on a tangent from this topic and consider mass in other contexts.</p>
-<p>In simple terms, mass is a measure of inertia. Inertia is the resistance of an object to change in its state of motion. The greater the mass, the greater the inertia, and the more force is required to change its velocity.</p>
-<p>Contrast this to a large corporation. A large corporation has a lot of inertia - it is resistant to change. Changing the direction of a large corporation requires significant effort and resources, much like changing the velocity of a massive object requires a large force. It is much easier to change the direction of a small startup company (low mass) than a large multinational corporation (high mass).</p>
+<p>In simple terms, mass is a measure of inertia. Inertia is the resistance of an object to change in its state of motion. The greater the mass, the greater the inertia, and the more force is required to change its momentum.</p>
+<p>Contrast this to a large corporation. A large corporation has a lot of inertia - it is resistant to change. Changing the direction of a large corporation requires significant effort and resources, much like changing the momentum of a massive object requires a large force. It is much easier to change the direction of a small startup company (low mass) than a large multinational corporation (high mass).</p>
 <p>However, the mass of a corporation is not fixed. Mergers, acquisitions, layoffs, and growth can all change the “mass” of a corporation over time. This is analogous to the variable mass scenarios in physics where the mass of a system changes with time. However, in this context, these changes with time are not continuous, so the function <img src="https://latex.codecogs.com/png.latex?m(t)"> is not differentiable everywhere.</p>
 <section id="parkinsons-law---the-mass-of-bureaucracy" class="level3">
 <h3 class="anchored" data-anchor-id="parkinsons-law---the-mass-of-bureaucracy">Parkinson’s Law - the mass of bureaucracy</h3>
@@ -128,14 +128,14 @@
 </section>
 
  ]]></description>
-  <guid>https://kriorog.github.io/kristjanrox_site/articles/newton 2nd law/newton_2nd_law.html</guid>
+  <guid>https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/newton_2nd_law.html</guid>
   <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/newton 2nd law/figures/newton.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/figures/newton.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>The Monty Hall Problem</title>
   <dc:creator>Röx </dc:creator>
-  <link>https://kriorog.github.io/kristjanrox_site/articles/monty_hall/monty_hall.html</link>
+  <link>https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/monty_hall.html</link>
   <description><![CDATA[ 
 
 
@@ -227,9 +227,9 @@ WyIuLi8uLi9DTkFNRSJd
 </section>
 
  ]]></description>
-  <guid>https://kriorog.github.io/kristjanrox_site/articles/monty_hall/monty_hall.html</guid>
+  <guid>https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/monty_hall.html</guid>
   <pubDate>Mon, 29 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/monty_hall/figures/Monty_open_door.png" medium="image" type="image/png" height="80" width="144"/>
+  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/figures/Monty_open_door.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 </channel>
 </rss>

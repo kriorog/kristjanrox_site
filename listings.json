@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/articles/sadi carnot/sadi_carnot.html",
-      "/articles/newton 2nd law/newton_2nd_law.html",
-      "/articles/monty_hall/monty_hall.html"
+      "/articles/03_sadi_carnot/sadi_carnot.html",
+      "/articles/02_newton_2nd_law/newton_2nd_law.html",
+      "/articles/01_monty_hall/monty_hall.html"
     ]
   }
 ]
