@@ -1,5 +1,5 @@
 ---
-title: articles
+pagetitle: articles
 listing:
   contents: articles
   sort: "date desc"
@@ -7,8 +7,4 @@ listing:
   categories: true
   feed:
       title: "Kristjan Röx"
-
-format:
-  html:
-    title-block-banner: false
 ---
