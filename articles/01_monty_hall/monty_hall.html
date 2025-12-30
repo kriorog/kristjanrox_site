@@ -168,11 +168,14 @@ window.Quarto = {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#the-basic-problem-statement" id="toc-the-basic-problem-statement" class="nav-link active" data-scroll-target="#the-basic-problem-statement">The basic problem statement</a></li>
-  <li><a href="#its-all-about-what-information-is-known" id="toc-its-all-about-what-information-is-known" class="nav-link" data-scroll-target="#its-all-about-what-information-is-known">It’s all about what information is known</a></li>
-  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution">The solution</a></li>
-  <li><a href="#different-host-behavior" id="toc-different-host-behavior" class="nav-link" data-scroll-target="#different-host-behavior">Different host behavior</a></li>
-  <li><a href="#reinforcement-through-simulation" id="toc-reinforcement-through-simulation" class="nav-link" data-scroll-target="#reinforcement-through-simulation">Reinforcement through simulation</a></li>
+  <li><a href="#the-basic-problem-statement" id="toc-the-basic-problem-statement" class="nav-link active" data-scroll-target="#the-basic-problem-statement"><span class="header-section-number">1</span> The basic problem statement</a></li>
+  <li><a href="#its-all-about-what-information-is-known" id="toc-its-all-about-what-information-is-known" class="nav-link" data-scroll-target="#its-all-about-what-information-is-known"><span class="header-section-number">2</span> It’s all about what information is known</a>
+  <ul class="collapse">
+  <li><a href="#therein-lies-the-key-to-understanding-the-problem" id="toc-therein-lies-the-key-to-understanding-the-problem" class="nav-link" data-scroll-target="#therein-lies-the-key-to-understanding-the-problem"><span class="header-section-number">2.1</span> Therein lies the key to understanding the problem</a></li>
+  </ul></li>
+  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution"><span class="header-section-number">3</span> The solution</a></li>
+  <li><a href="#different-host-behavior" id="toc-different-host-behavior" class="nav-link" data-scroll-target="#different-host-behavior"><span class="header-section-number">4</span> Different host behavior</a></li>
+  <li><a href="#reinforcement-through-simulation" id="toc-reinforcement-through-simulation" class="nav-link" data-scroll-target="#reinforcement-through-simulation"><span class="header-section-number">5</span> Reinforcement through simulation</a></li>
   </ul>
 </nav>
     </div>
@@ -211,33 +214,51 @@ window.Quarto = {
 </header>
 
 
-<p>The Monty Hall Problem is a famous probability puzzle based on a game show scenario. It is named after Monty Hall, the original host of the television game show “Let’s Make a Deal.” The problem is known for its counterintuitive solution, which often surprises people.</p>
+<p>The Monty Hall Problem is a famous probability brainteaser based on a game show scenario. It is named after Monty Hall, the original host of the television game show “Let’s Make a Deal.” The problem is known for its counterintuitive solution, which often surprises people - and still sparks debate among statisticians and enthusiasts alike.</p>
 <p>The problem was first posed by Steve Selvin in a letter to the journal “The American Statistician” in 1975. It gained widespread attention after being featured in Marilyn vos Savant’s “Ask Marilyn” column in Parade magazine in 1990.</p>
-<p>Marilyn’s response sparked a significant public debate, as many readers found the solution counterintuitive and disagreed with her explanation. The Monty Hall Problem has since become a classic example in probability theory and is often used to illustrate the importance of considering all available information when making decisions.</p>
-<p>Savant’s solution has been hotly contested and debated, with many people finding it counterintuitive. But why is it so?</p>
-<section id="the-basic-problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="the-basic-problem-statement">The basic problem statement</h2>
-<p>The original problem is as follows:1. You are a contestant on a game show. 2. There are three doors: behind one door is a car (the prize you want), and behind the other two doors are goats (which you don’t want). 3. You pick one door (say, Door 1). 4. The host, who knows what’s behind all the doors, opens another door (say, Door 3) that has a goat behind it. 5. The host then gives you the option to switch your choice to the remaining unopened door (Door 2) or stick with your original choice (Door 1).</p>
+<p>Marilyn’s response sparked a significant public debate, as many readers found the solution counterintuitive and disagreed with her explanation. The Monty Hall Problem has since become a classic example in probability theory and is often used to illustrate the importance of considering all available information when making decisions, and who exactly is privy to that information.</p>
+<p>We’ll explore the problem, its solution, and the reasoning behind it.</p>
+<section id="the-basic-problem-statement" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="the-basic-problem-statement"><span class="header-section-number">1</span> The basic problem statement</h2>
+<p>The original problem is as follows:</p>
+<ol type="1">
+<li>You are a contestant on a game show.</li>
+<li>There are three doors: behind one door is a car (the prize you want), and behind the other two doors are goats (which you don’t want).</li>
+<li>You pick one door (say, Door 1).</li>
+<li>The host, who knows what’s behind all the doors, opens another door (say, Door 3) that has a goat behind it.</li>
+<li>The host then gives you the option to switch your choice to the remaining unopened door (Door 2) or stick with your original choice (Door 1).</li>
+</ol>
 <p>What should you do to maximize your chances of winning the car?</p>
-<p>The immediate intuition might suggest that since we now have two doors to choose from, the odds are 50/50, and it doesn’t matter whether we switch or stay. However, this is not the case.</p>
-<p>The correct solution is that you should always switch doors. By switching, you have a 2/3 chance of winning the car, while if you stick with your original choice, you only have a 1/3 chance. This is the solution given by Marilyn vos Savant. However, this solution is dependent on the exact problem statement given. If the problem statement is changed, in particular the host’s behavior, the solution may also change.</p>
-<p>The disagreements and debates around the Monty Hall Problem often stem from misunderstandings of the problem’s conditions and the role of the host’s actions. Many people assume that the host’s choice to open a door is random, but in reality, the host always opens a door with a goat behind it, which provides additional information that affects the probabilities.</p>
+<p>The immediate intuition might suggest that after Monty offers us the switch, we now have only two doors to choose from, with each being equally likely, i.e.&nbsp;the odds being 50/50. So it does not matter whether we switch or stay. However, this is not the case.</p>
+<p>The correct solution is that you should always switch doors.</p>
+<p>Why? By switching, you have a 2/3 chance of winning the car, while if you stick with your original choice, you only have a 1/3 chance. This is the solution given by Marilyn vos Savant. However, this solution is dependent on the exact problem statement given. If the problem statement is changed, in particular the host’s behavior, the solution may also change.</p>
+<p>The disagreements and debates around the Monty Hall Problem often stem from misunderstandings of the problem’s conditions and the role of the host’s actions. Many people assume that the host’s choice to open a door is random, but in reality, the host always opens a door with a goat behind it, which provides additional information that affects the probabilities. In technical terms, the host’s actions are not independent from the contestant’s choice, and this dependency is crucial to understanding the correct solution.</p>
+<p>The original <em>Ask Marilyn</em> column, vos Savant’s response, and subsequent reader correspondence be found <a href="https://web.archive.org/web/20130121183432/http://marilynvossavant.com/game-show-problem/">here</a>.</p>
 </section>
-<section id="its-all-about-what-information-is-known" class="level2">
-<h2 class="anchored" data-anchor-id="its-all-about-what-information-is-known">It’s all about what information is known</h2>
-<p>The fundamentals of probabilities and conditional problems are directly related to what information is known and by whom.</p>
-<p>In the beginning, we have three doors, and the probability of the car being behind any door is 1/3. When you pick a door, you have a 1/3 chance of having picked the car and a 2/3 chance of having picked a goat. We do not know where the car is, and do not have any other information at this time to help us make a better choice. The probabilities are unformly distributed between all options.</p>
-<p>However, after we make our initial choice, the host’s actions are not random. Therein lies the key to understanding the problem. The host knows where the car is and will always open a door that has a goat behind it. This action provides us with new information that changes the probabilities. We can reinforce this understanding by considering the following: 1. The host will never open the door you initially picked. 2. The host knows where the car is and will always open a door with a goat behind it.</p>
+<section id="its-all-about-what-information-is-known" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="its-all-about-what-information-is-known"><span class="header-section-number">2</span> It’s all about what information is known</h2>
+<p>The fundamentals of stochastic problems are directly related to what information is known and by whom.</p>
+<p>A common assumption in stochastic processes is that different events are <em>Independent and Identically Distributed (i.i.d)</em>. This means that one event does not affect any subsequent events, and they are drawn from the same probability distribution. If a subsequent event is dependent on the outcome of a previous event, we’d have to look at conditional probabilites given the outcome of the first event.</p>
+<p>In the beginning, we have three doors, and the probability of the car being behind any door is 1/3. When you pick a door, you have a 1/3 chance of having picked the car and a 2/3 chance of having picked a goat. We do not know where the car is, and do not have any other information at this time to help us make a better choice. The probabilities are uniformly distributed between all options.</p>
+<p>However, after we make our initial choice, the host’s action is not random - it’s deterministic and dependent on the initial choice which he knows.</p>
+<section id="therein-lies-the-key-to-understanding-the-problem" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="therein-lies-the-key-to-understanding-the-problem"><span class="header-section-number">2.1</span> Therein lies the key to understanding the problem</h3>
+<p>The host knows where the car is and will always open a door that has a goat behind it. This action provides us with new information that changes the probabilities. We can reinforce this understanding by considering the following:</p>
+<ol type="1">
+<li>The host will never open the door you initially picked.</li>
+<li>The host knows where the car is and will always open a door with a goat behind it.</li>
+</ol>
 <p>Out of the two doors we did not choose, the host’s choice between those two doors provides valuable information to our problem which is not random, and thus allows us to update our probabilities for the remaining two unopened doors.</p>
-<p>However, had the host opened a door at random, even possibly the one we initially picked, the probabilities would remain 50/50 between the two remaining doors, as no new information would have been provided that allows us to updated our probabilities from the initial uniform probabilities.</p>
-<p>Consider also an innocent bystander who knows nothing about what has happened, which door the contenstant chose and just sees two doors left unopened. For this bystander, the probabilities are indeed 50/50 between both doors - as they have no additional information - but for you as the contenstant, the probabilities are 2/3 in favour of switching from your initial choice.</p>
+<p>However, had the host opened a door at random, even possibly the one we initially picked, the probabilities would remain 50/50 between the two remaining doors, as no new information would have been provided that allows us to updated our probabilities from the initial uniform probabilities. In other words, the host’s choices would be <em>Independent and Identically Distributed</em> as our choice of door to open.</p>
+<p>To contrast this - consider an innocent bystander who knows nothing about what has happened, which door the contestant chose and just sees two doors left unopened. For this bystander, the probabilities are indeed 50/50 between both doors - as they have no additional information - but for you as the contestant, the probabilities are 2/3 in favour of switching from your initial choice.</p>
 </section>
-<section id="the-solution" class="level2">
-<h2 class="anchored" data-anchor-id="the-solution">The solution</h2>
+</section>
+<section id="the-solution" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-solution"><span class="header-section-number">3</span> The solution</h2>
 <p>So, here is the full solution.</p>
-<p>We have gone over the probabilities at the initial choice of door by the contestant, the one chosen has probability <span class="math inline">\(p=1/3\)</span> of having the car, the other two doors have a combined probability of <span class="math inline">\(1-p=2/3\)</span> of having the car. The probabilities add up to 1 since there is only one car and one door must be openend - i.e.&nbsp;something will happen, either a car is revealed or not.</p>
+<p>We have gone over the probabilities at the initial choice of door by the contestant, the one chosen has probability <span class="math inline">\(p=1/3\)</span> of having the car, the other two doors have a combined probability of <span class="math inline">\(1-p=2/3\)</span> of having the car. The probabilities add up to 1 since there is only one car and one door must be opened - i.e.&nbsp;something will happen, either a car is revealed or not.</p>
 <p>Although there is 2/3 probability of the car being behind either of the other two doors, we don’t know which one out of those two to pick. We need more information to make a better choice.</p>
-<p>However, the host’s knowledge and actions will help us with this problem. Since the host will only choose a door out of the two unchosen doors, and will never open the door with the car - should it be behind either of them - the other door he did not choose becomes more valuable to us, since the full 2/3 probability of the car being beind either of the two unchosen doors now tranfers fully to the door not chosen by the host. We now don’t have to choose between the other two doors, the host has eliminated one for us free of charge. This is called variable change - i.e the actions by the host changes the variables of our problem.</p>
+<p>However, the host’s knowledge and actions will help us with this problem. Since the host will only choose a door out of the two unchosen doors, and will never open the door with the car - should it be behind either of them - the other door he did not choose becomes more valuable to us, since the full 2/3 probability of the car being behind either of the two unchosen doors now tranfers fully to the door not chosen by the host. We now don’t have to choose between the other two doors, the host has eliminated one for us free of charge. This is called variable change - i.e the actions by the host changes the variables of our problem.</p>
 <p>There is a famous classroom scene in the movie “21” from 2008 where this is explained quite well (see below). There is also a great numberphile video explaining the problem and solution in detail.</p>
 <p>Here is the scene from 21:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CYyUuIXzGgI?si=ZzQt_6Rw4SgkQ8tK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
@@ -247,22 +268,22 @@ window.Quarto = {
 </iframe>
 <p>The scene from 21 is also of interest from the other topic discussed, namely Newton’s method - or Newton-Raphson method - for finding roots of functions and the possible issues with that method. This is a topic for another time though.</p>
 </section>
-<section id="different-host-behavior" class="level2">
-<h2 class="anchored" data-anchor-id="different-host-behavior">Different host behavior</h2>
+<section id="different-host-behavior" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="different-host-behavior"><span class="header-section-number">4</span> Different host behavior</h2>
 <p>It is important to note that the solution to the Monty Hall Problem is dependent on the host’s behavior. If the host’s actions were different, the probabilities and optimal strategy could change. For example, if the host were to open a door at random, without knowledge of what is behind the doors, the probabilities would indeed be 50/50 between the two remaining doors after one is opened, and switching or staying would not matter. In other words, such behaviour by the host would not provide any additional information to the contestant.</p>
 <p>We can look at various different host behaviors and see how they affect the solution:</p>
 <ol type="1">
 <li><p><strong>Host always opens a door with a goat (standard Monty Hall Problem)</strong>: The optimal strategy is to always switch, giving a 2/3 chance of winning the car.</p></li>
-<li><p><strong>Host opens a door at random</strong>: The optimal strategy is to stick with the original choice, as the probabilities are 50/50 between the two remaining doors.</p></li>
+<li><p><strong>Host opens a door at random</strong>: It does not matter if you stick with your first choice or change to the other remaining door, as the probabilities are 50/50 between the two remaining doors.</p></li>
 <li><p><strong>Host only opens a door if the contestant initially picked the car</strong>: In this case, the optimal strategy is to always stick with the original choice, as switching would lead to a guaranteed loss.</p></li>
 <li><p><strong>Host opens a door only if the contestant initially picked a goat</strong>: Here, the optimal strategy is to always switch, as switching would lead to a guaranteed win.</p></li>
 </ol>
 <p>These variations illustrate how the host’s behavior can significantly impact the probabilities and optimal strategies in the Monty Hall Problem.</p>
 </section>
-<section id="reinforcement-through-simulation" class="level2">
-<h2 class="anchored" data-anchor-id="reinforcement-through-simulation">Reinforcement through simulation</h2>
+<section id="reinforcement-through-simulation" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="reinforcement-through-simulation"><span class="header-section-number">5</span> Reinforcement through simulation</h2>
 <p>To further reinforce the understanding of the Monty Hall Problem, we can simulate the game multiple times to see how often switching versus staying leads to winning the car. Below is a simple Python simulation that demonstrates this. The contestant and host choices are randomly (pseud-randomly) generated to mimic the game scenario. The simulation is run for a large number of trials to get statistically significant results, providing a point estimate of the probability of choosing the right door <span class="math inline">\(p\)</span> vs.&nbsp;switching <span class="math inline">\(1-p\)</span>.</p>
-<p>This code is essentially simulating a Bernoulli process where each trial results in either a win or a loss based on the chosen strategy (switching or staying). By running the simulation multiple times, we can estimate the sample probabilities of winning for each strategy, taking advantage of the law of large numbers for the sample probabilities convering towards the true probabilities.</p>
+<p>This code is essentially simulating a Bernoulli process where each trial results in either a win or a loss based on the chosen strategy (switching or staying). By running the simulation multiple times, we can estimate the sample probabilities of winning for each strategy, taking advantage of the law of large numbers for the sample probabilities converging towards the true probabilities.</p>
 <p>Run the following code cell by clicking “RUN CODE” in the upper right corner. Adjust the code as you please to experiment with different numbers of trials or strategies.</p>
 <div id="285482cc" class="cell" data-runbutton="true" data-number-lines="true">
 <div>
