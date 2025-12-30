@@ -21,13 +21,13 @@
 
 
 
-<section id="relative-performance-analysis---in-the-spirit-of-sadi-carnot" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Relative performance analysis - in the spirit of Sadi Carnot</h1>
+<section id="relative-performance-analysis---in-the-spirit-of-sadi-carnot" class="level1">
+<h1>Relative performance analysis - in the spirit of Sadi Carnot</h1>
 <p>Sadi Carnot - who?</p>
 <p>Well, every engineer worth his salt will remember Sadi Carnot from their thermodynamic classes. The Carnot heat engine is a fundamental concept in thermodynamics - which establishes the maximum possible efficiency that any heat engine can achieve when operating between two temperature reservoirs. This is quite an important concept - and an interesting answer to an even more interesting question.</p>
 <p>It does not matter what setting one finds oneself - be it in engineering, business, or even personal life - the question of “How well can I do?” is always relevant. Given the constraints of my situation - what is the best possible outcome that I can achieve? This is where the concept of relative performance analysis comes into play.</p>
-<section id="relative-vs-absolute" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="relative-vs-absolute"><span class="header-section-number">1.1</span> Relative vs Absolute</h2>
+<section id="relative-vs-absolute" class="level2">
+<h2 class="anchored" data-anchor-id="relative-vs-absolute">Relative vs Absolute</h2>
 <p>Let’s first clarify what is meant by relative performance analysis.</p>
 <p>We can use the first law of thermodynamics as a simple benchmark - although we are absolutely not limiting ourselves to thermodynamics. The first law states that energy is conserved, i.e.&nbsp;it is not created or destroyed, only converted from one form to another. For a heat engine, which we want to produce work <img src="https://latex.codecogs.com/png.latex?W"> for us, the total work output is equal to the heat input <img src="https://latex.codecogs.com/png.latex?Q_%7Bin%7D"> minus the heat rejection <img src="https://latex.codecogs.com/png.latex?Q_%7Bout%7D">. An absolute efficiency of this system is calculated by looking at the work achieved compared to the heat input, i.e.&nbsp;how much did we put in and how much of value did we get out, or</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Ceta_%7Babsolute%7D%20=%20%5Cfrac%7BW%7D%7BQ_%7Bin%7D%7D%20=%20%5Cfrac%7BQ_%7Bin%7D%20-%20Q_%7Bout%7D%7D%7BQ_%7Bin%7D%7D%20=%201%20-%20%5Cfrac%7BQ_%7Bout%7D%7D%7BQ_%7Bin%7D%7D"></p>
@@ -35,23 +35,23 @@
 <p>Given the constraints of the 2nd law - i.e.&nbsp;entropy must always increase - <img src="https://latex.codecogs.com/png.latex?%5Ceta_%7Babsolute%7D"> can never be 100% - there will always be some heat rejected to the cold reservoir, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?Q_%7Bout%7D%3E0">.</p>
 <p>Since we can’t achieve 100% efficiency, the value of this efficiency paramenter is questionable, since we don’t know how high it can be? So what does <img src="https://latex.codecogs.com/png.latex?%5Ceta_%7Babsolute%7D=0.74"> mean for us if we don’t know it’s upper bound? This is where Sadi Carnot comes in - and relative performance analysis.</p>
 </section>
-<section id="sadi-carnot-asked-the-right-question" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sadi-carnot-asked-the-right-question"><span class="header-section-number">1.2</span> Sadi Carnot asked the right question</h2>
+<section id="sadi-carnot-asked-the-right-question" class="level2">
+<h2 class="anchored" data-anchor-id="sadi-carnot-asked-the-right-question">Sadi Carnot asked the right question</h2>
 <p>Since a heat engine’s performance is limited by the 2nd law of thermodynamics, Sadi Carnot asked the right question - what is the maximum possible efficiency that a heat engine can achieve when operating between two temperature reservoirs?</p>
 <p>His ideal heat engine - the Carnot engine - operates on a reversible cycle between a hot reservoir at temperature <img src="https://latex.codecogs.com/png.latex?T_%7Bhot%7D"> and a cold reservoir at temperature <img src="https://latex.codecogs.com/png.latex?T_%7Bcold%7D">. The efficiency of the Carnot engine is given by: <img src="https://latex.codecogs.com/png.latex?%5Ceta_%7BCarnot%7D%20=%201%20-%20%5Cfrac%7BT_%7Bcold%7D%7D%7BT_%7Bhot%7D%7D"></p>
 <p>So it makes no relation to the actual engine itself - as it is ideal - but is only limited by the temperatures of the heat reservoirs between which it operates. By inspection, increasing the temperature difference between the hot and cold reservoirs increases the maximum possible efficiency.</p>
 <p>Now we have an upper bound on our efficiency - and we can make better use of the absoluted efficiency by comparing it to the Carnot efficiency. This gives us the relative efficiency: <img src="https://latex.codecogs.com/png.latex?%5Ceta_%7Brelative%7D%20=%20%5Cfrac%7B%5Ceta_%7Babsolute%7D%7D%7B%5Ceta_%7BCarnot%7D%7D%20=%20%5Cfrac%7BW/Q_%7Bin%7D%7D%7B1%20-%20T_%7Bcold%7D/T_%7Bhot%7D%7D"></p>
 <p>Can we build a heat engine that has the ideal Carnot efficiency? No, because it would require reversible processes, which are not achievable in practice. However, by comparing our actual engine’s efficiency to the Carnot efficiency, we can assess how well our engine performs relative to the theoretical maximum - not the absolute 1st law constraint.</p>
 </section>
-<section id="applying-this-to-other-fields" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="applying-this-to-other-fields"><span class="header-section-number">1.3</span> Applying this to other fields</h2>
+<section id="applying-this-to-other-fields" class="level2">
+<h2 class="anchored" data-anchor-id="applying-this-to-other-fields">Applying this to other fields</h2>
 <p>The concept of relative performance analysis can be applied to various fields beyond thermodynamics. In business, for example, companies can evaluate their performance relative to industry benchmarks or best practices. Instead of just looking at absolute metrics like revenue or profit, they can assess how well they are doing compared to the best possible outcomes given their market conditions. Similarly, in personal development, individuals can measure their progress relative to their potential or goals rather than just absolute achievements.</p>
 <p>How do we determine these benchmarks or best practices? This is where domain expertise and analysis come into play. By understanding the constraints and opportunities within a specific field, we can establish meaningful benchmarks that reflect the best possible outcomes.</p>
 <p>We can use the tools of mathematical modelling and optimization to help us establish the optimal benchmarks - just like Sadi Carnot did for heat engines. By identifying the key variables and constraints in a given situation, we can develop models that help us understand the limits of performance and identify strategies for improvement.</p>
 <p>Everything we do is subject to constraints - be it physical, economic, or personal. We also have certain objectives in mind for each process, be it profit or cost, etc. By adopting a relative performance analysis approach, we can gain a deeper understanding of our capabilities and identify pathways for growth and improvement. Just like Sadi Carnot’s insights revolutionized thermodynamics, applying similar principles in other fields can lead to significant advancements and better outcomes.</p>
 </section>
-<section id="can-we-increase-performance-if-we-are-constrained" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="can-we-increase-performance-if-we-are-constrained"><span class="header-section-number">1.4</span> Can we increase performance if we are constrained?</h2>
+<section id="can-we-increase-performance-if-we-are-constrained" class="level2">
+<h2 class="anchored" data-anchor-id="can-we-increase-performance-if-we-are-constrained">Can we increase performance if we are constrained?</h2>
 <p>Of course.</p>
 <p>Since we are always subject to constraints, we can always look for ways to improve our outcomes by investigating strategies to change these constraints.</p>
 <p>Let’s say we have a mathematical optimzation model for our process - in whatever industry or setting. We solve that problem and optain an optimal solution. That is not the end of the story. There are ways to possibly achieve a better result - but it may need some increase in cost, additional effort, or investment.</p>
@@ -77,13 +77,13 @@
 
 
 
-<section id="newtons-2nd-law" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="newtons-2nd-law"><span class="header-section-number">1</span> Newton’s 2nd Law</h2>
+<section id="newtons-2nd-law" class="level2">
+<h2 class="anchored" data-anchor-id="newtons-2nd-law">Newton’s 2nd Law</h2>
 <p><img src="https://latex.codecogs.com/png.latex?F=ma"></p>
 <p>Thanks for tuning in.</p>
 </section>
-<section id="but-seriously" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="but-seriously"><span class="header-section-number">2</span> But seriously…</h2>
+<section id="but-seriously" class="level2">
+<h2 class="anchored" data-anchor-id="but-seriously">But seriously…</h2>
 <p>This is the typical starting point for anyone writing down the 2nd law of motion. But it’s just not what it is.</p>
 <p>The version written above is a special case. Firstly, acceleration <img src="https://latex.codecogs.com/png.latex?a"> is a vector, so we should writhe <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Ba%7D"> instead of <img src="https://latex.codecogs.com/png.latex?a">. If our analysis is one dimensional - then we can reduce <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Ba%7D"> to <img src="https://latex.codecogs.com/png.latex?a">, but in general it is a vector quantity as a vector can be one dimensions - or however many dimensions you like.</p>
 <p>Secondly, Newton wasn’t thinking about acceleration of a fixed mass - rather he was thinking about how momentum changes with time. His original formulation was <img src="https://latex.codecogs.com/png.latex?%5Cvec%7BF%7D=%5Cfrac%7Bd%5Cvec%7Bp%7D%7D%7Bdt%7D."></p>
@@ -93,8 +93,8 @@
 <p>A conserved quantity in physics is gold - as it allows us to relate two states of a system without knowing the details of how the system got from one state to another, since (in this case) the momentum is the same at both states. Another key conserved quantity is energy <img src="https://latex.codecogs.com/png.latex?E">.</p>
 <p>Since mass <img src="https://latex.codecogs.com/png.latex?m"> is a scalar, and velocity <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bv%7D"> is a vector, the momentum is a scaled velocity vector, i.e.&nbsp;it has the same direction as velocity, but its magnitude is scaled by mass.</p>
 </section>
-<section id="the-general-form" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="the-general-form"><span class="header-section-number">3</span> The general form</h2>
+<section id="the-general-form" class="level2">
+<h2 class="anchored" data-anchor-id="the-general-form">The general form</h2>
 <p>Carrying out the differentiation using the product rule gives:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cvec%7BF%7D=%5Cfrac%7Bd(m%5Cvec%7Bv%7D)%7D%7Bdt%7D=m%5Cfrac%7Bd%5Cvec%7Bv%7D%7D%7Bdt%7D+%5Cvec%7Bv%7D%5Cfrac%7Bdm%7D%7Bdt%7D."></p>
 <p>What we typically do is consider mass to be constant, so the second term vanishes to <img src="https://latex.codecogs.com/png.latex?dm/dt=0">, leaving us with:</p>
@@ -103,19 +103,19 @@
 <p>So our typical form is just a special case of the more general form.</p>
 <p>Because this is a vector equation, it encodes quite alot of information. If our problem is one dimensions, this reduces to a scalar equation (one equation). For two dimensions, the vector equation encodes two scalar equations (one for each component), and in three dimensions it encodes three scalar equations.</p>
 </section>
-<section id="why-does-this-matter" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="why-does-this-matter"><span class="header-section-number">4</span> Why does this matter?</h2>
+<section id="why-does-this-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-does-this-matter">Why does this matter?</h2>
 <p>In many practical applications, the mass of the system is not constant with respect to time.</p>
 <p>Anyone who has studied fluid mechanics or rocket propulsion will be familiar with the more general form, where mass is not constant with respect to time. In rockets, mass is expelled (the propellant) and in fluid dynamics mass flow in a control volume is variable with time. However, for rockets, the general form needs to be used with care while considering relative velocities. Starting out with a scalar <img src="https://latex.codecogs.com/png.latex?F=ma"> in those fields will not get you very far.</p>
 </section>
-<section id="embracing-first-principles" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="embracing-first-principles"><span class="header-section-number">5</span> Embracing first principles</h2>
+<section id="embracing-first-principles" class="level2">
+<h2 class="anchored" data-anchor-id="embracing-first-principles">Embracing first principles</h2>
 <p>I’ve always tried to keep in mind the first principles of physics. Newton’s laws are exactly that - first principles. They are not just equations to be memorized, but rather they are the foundation upon which we build our understanding of mechanics.</p>
 <p>When we start with the more general form of Newton’s 2nd law, we are reminded that forces cause changes in momentum, and that momentum can change not only due to changes in velocity but also due to changes in mass. This broader perspective is crucial for understanding a wide range of physical phenomena.</p>
 <p>Instead of starting half way down the road with <img src="https://latex.codecogs.com/png.latex?F=ma">, starting with <img src="https://latex.codecogs.com/png.latex?%5Cvec%7BF%7D=d%5Cvec%7Bp%7D/dt"> and then performing acceptable adjustments or simplifacations to the problem at hand keeps us grounded in the fundamental concepts of physics and encourages us to think more deeply about the systems we are analyzing. It does not cost anything extra to remember the more general form, and it pays off in the long run.</p>
 </section>
-<section id="deriving-the-rocket-equation" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="deriving-the-rocket-equation"><span class="header-section-number">6</span> Deriving the rocket equation</h2>
+<section id="deriving-the-rocket-equation" class="level2">
+<h2 class="anchored" data-anchor-id="deriving-the-rocket-equation">Deriving the rocket equation</h2>
 <p>Let’s develop the equation of motion for a rocket in one dimension. We start with the general form</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cvec%7BF%7D%20=%20%5Cfrac%7Bd%5Cvec%7Bp%7D%7D%7Bdt%7D%20=%20m%5Cvec%7Ba%7D%20+%20%5Cfrac%7Bdm%7D%7Bdt%7D%5Cvec%7Bv%7D."></p>
 <p>Every rocket, regardless of the actual propulsion device, generates thrust by expelling mass. The <img src="https://latex.codecogs.com/png.latex?dm/dt"> term is therefore important for thrust. There is however a problem with this formulation - without additional context. A stationary rocket (<img src="https://latex.codecogs.com/png.latex?v=0">) can generate thrust by expelling mass <img src="https://latex.codecogs.com/png.latex?dm/dt%3C0">. However, that term vanishes at time <img src="https://latex.codecogs.com/png.latex?t=0"> if <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bv%7D(0)=%5Cvec%7B0%7D">.</p>
@@ -128,8 +128,8 @@
 <p><img src="https://latex.codecogs.com/png.latex?F%20+%20%5Cfrac%7Bdm%7D%7Bdt%7DV_e%20=%20ma"></p>
 <p>As <img src="https://latex.codecogs.com/png.latex?dm/dt%3C0"> and <img src="https://latex.codecogs.com/png.latex?V_e%3C0"> the thrust term is positive - which makes sense. Increased thrust should yield an increase in acceleration <img src="https://latex.codecogs.com/png.latex?a"> for a given mass <img src="https://latex.codecogs.com/png.latex?m">.</p>
 <p>It is understandable that this derivation leaves some questions unanswered. In particular, consider that we have the acceleration term of the rocket <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Ba%7D=%5Cvec%7Ba%7D(t)"> in an inertial frame of reference, but the thrust component has a velocity <img src="https://latex.codecogs.com/png.latex?%5Cvec%7BV%7D_e"> which is observed in the rocket’s frame of reference. How does that make sense?</p>
-<section id="a-deeper-dive-into-the-rocket-equation" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="a-deeper-dive-into-the-rocket-equation"><span class="header-section-number">6.1</span> A deeper dive into the rocket equation</h3>
+<section id="a-deeper-dive-into-the-rocket-equation" class="level3">
+<h3 class="anchored" data-anchor-id="a-deeper-dive-into-the-rocket-equation">A deeper dive into the rocket equation</h3>
 <p>Consider the following two states of the rocket, one at time <img src="https://latex.codecogs.com/png.latex?t"> before a mass <img src="https://latex.codecogs.com/png.latex?dm"> is expelled, and one a short time interval <img src="https://latex.codecogs.com/png.latex?dt"> after.</p>
 <div id="fig-conservation_of_momentum" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -154,21 +154,21 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 <p><img src="https://latex.codecogs.com/png.latex?F%20+%20%5Cfrac%7Bdm%7D%7Bdt%7DV_e%20=%20ma."></p>
 <p>Keep in mind that <img src="https://latex.codecogs.com/png.latex?dm/dt%20%3C%200"> and <img src="https://latex.codecogs.com/png.latex?V_e%3C0">, so the thrust term is positive.</p>
 </section>
-<section id="what-does-this-demonstrate" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="what-does-this-demonstrate"><span class="header-section-number">6.2</span> What does this demonstrate</h3>
+<section id="what-does-this-demonstrate" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-this-demonstrate">What does this demonstrate</h3>
 <p>This derivation shows that even starting with the general form of</p>
 <p><img src="https://latex.codecogs.com/png.latex?F%20=%20%5Cfrac%7Bdp%7D%7Bdt%7D%20=%20ma%20+%20%5Cfrac%7Bdm%7D%7Bdt%7Dv"></p>
 <p>can even be a step to far in some cases. We should have started with <img src="https://latex.codecogs.com/png.latex?dp/dt"> and derived that relation and then relate it to any external forces with the 2nd law.</p>
 </section>
 </section>
-<section id="a-tangent---mass-and-the-2nd-law-in-other-contexts" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="a-tangent---mass-and-the-2nd-law-in-other-contexts"><span class="header-section-number">7</span> A tangent - mass and the 2nd law in other contexts</h2>
+<section id="a-tangent---mass-and-the-2nd-law-in-other-contexts" class="level2">
+<h2 class="anchored" data-anchor-id="a-tangent---mass-and-the-2nd-law-in-other-contexts">A tangent - mass and the 2nd law in other contexts</h2>
 <p>Let’s venture off on a tangent from this topic and consider mass in other contexts.</p>
 <p>In simple terms, mass is a measure of inertia. Inertia is the resistance of an object to change in its state of motion. The greater the mass, the greater the inertia, and the more force is required to change its momentum.</p>
 <p>Contrast this to a large corporation. A large corporation has a lot of inertia - it is resistant to change. Changing the direction of a large corporation requires significant effort and resources, much like changing the momentum of a massive object requires a large force. It is much easier to change the direction of a small startup company (low mass) than a large multinational corporation (high mass).</p>
 <p>However, the mass of a corporation is not fixed. Mergers, acquisitions, layoffs, and growth can all change the “mass” of a corporation over time. This is analogous to the variable mass scenarios in physics where the mass of a system changes with time. However, in this context, these changes with time are not continuous, so the function <img src="https://latex.codecogs.com/png.latex?m(t)"> is not differentiable everywhere.</p>
-<section id="parkinsons-law---the-mass-of-bureaucracy" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="parkinsons-law---the-mass-of-bureaucracy"><span class="header-section-number">7.1</span> Parkinson’s Law - the mass of bureaucracy</h3>
+<section id="parkinsons-law---the-mass-of-bureaucracy" class="level3">
+<h3 class="anchored" data-anchor-id="parkinsons-law---the-mass-of-bureaucracy">Parkinson’s Law - the mass of bureaucracy</h3>
 <p><a href="https://en.wikipedia.org/wiki/Parkinson%27s_law">Parkinson’s Law</a> states that “work expands to fill the time available for its completion.” In the context of a corporation, this can be interpreted as the tendency for bureaucratic processes to grow in complexity and size over time, regardless of the actual workload. This growth in bureaucracy can be seen as an increase in the “mass” of the corporation, making it more resistant to change and less agile.</p>
 <p>This means that the change in mass of government - and thus of its inertia - is always increasing with time, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?dm/dt%3E0"> always. As such, considering it at moving at constant velocity at a given time (<img src="https://latex.codecogs.com/png.latex?d%5Cvec%7Bv%7D/dt=0">), the magnitude of the force needed to make any change also increases with time <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%7Bd%5Cvec%7BF%7D/dt%7D%5Cright%7C%3E0">. In other words, it just gets harder and harder with time to notice any impact of changes made, or a lot more effort has to be expelled for a unit change to be observed. This is an interesting contrast to physical systems where mass can both increase and decrease with time.</p>
 <p>However, I have worked in companies that display a chronic beurocratic bloat, where the mass seems to increase without bound. In such cases, the corporation becomes so massive and inertial that it is nearly impossible to change its direction or adapt to new circumstances. So this is not limited to just government…</p>
@@ -195,8 +195,8 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 <p>The problem was first posed by Steve Selvin in a letter to the journal “The American Statistician” in 1975. It gained widespread attention after being featured in Marilyn vos Savant’s “Ask Marilyn” column in Parade magazine in 1990.</p>
 <p>Marilyn’s response sparked a significant public debate, as many readers found the solution counterintuitive and disagreed with her explanation. The Monty Hall Problem has since become a classic example in probability theory and is often used to illustrate the importance of considering all available information when making decisions, and who exactly is privy to that information.</p>
 <p>We’ll explore the problem, its solution, and the reasoning behind it.</p>
-<section id="the-basic-problem-statement" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="the-basic-problem-statement"><span class="header-section-number">1</span> The basic problem statement</h2>
+<section id="the-basic-problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="the-basic-problem-statement">The basic problem statement</h2>
 <p>The original problem is as follows:</p>
 <ol type="1">
 <li>You are a contestant on a game show.</li>
@@ -212,14 +212,14 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 <p>The disagreements and debates around the Monty Hall Problem often stem from misunderstandings of the problem’s conditions and the role of the host’s actions. Many people assume that the host’s choice to open a door is random, but in reality, the host always opens a door with a goat behind it, which provides additional information that affects the probabilities. In technical terms, the host’s actions are not independent from the contestant’s choice, and this dependency is crucial to understanding the correct solution.</p>
 <p>The original <em>Ask Marilyn</em> column, vos Savant’s response, and subsequent reader correspondence be found <a href="https://web.archive.org/web/20130121183432/http://marilynvossavant.com/game-show-problem/">here</a>.</p>
 </section>
-<section id="its-all-about-what-information-is-known" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="its-all-about-what-information-is-known"><span class="header-section-number">2</span> It’s all about what information is known</h2>
+<section id="its-all-about-what-information-is-known" class="level2">
+<h2 class="anchored" data-anchor-id="its-all-about-what-information-is-known">It’s all about what information is known</h2>
 <p>The fundamentals of stochastic problems are directly related to what information is known and by whom.</p>
 <p>A common assumption in stochastic processes is that different events are <em>Independent and Identically Distributed (i.i.d)</em>. This means that one event does not affect any subsequent events, and they are drawn from the same probability distribution. If a subsequent event is dependent on the outcome of a previous event, we’d have to look at conditional probabilites given the outcome of the first event.</p>
 <p>In the beginning, we have three doors, and the probability of the car being behind any door is 1/3. When you pick a door, you have a 1/3 chance of having picked the car and a 2/3 chance of having picked a goat. We do not know where the car is, and do not have any other information at this time to help us make a better choice. The probabilities are uniformly distributed between all options.</p>
 <p>However, after we make our initial choice, the host’s action is not random - it’s deterministic and dependent on the initial choice which he knows.</p>
-<section id="therein-lies-the-key-to-understanding-the-problem" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="therein-lies-the-key-to-understanding-the-problem"><span class="header-section-number">2.1</span> Therein lies the key to understanding the problem</h3>
+<section id="therein-lies-the-key-to-understanding-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="therein-lies-the-key-to-understanding-the-problem">Therein lies the key to understanding the problem</h3>
 <p>The host knows where the car is and will always open a door that has a goat behind it. This action provides us with new information that changes the probabilities. We can reinforce this understanding by considering the following:</p>
 <ol type="1">
 <li>The host will never open the door you initially picked.</li>
@@ -230,8 +230,8 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 <p>To contrast this - consider an innocent bystander who knows nothing about what has happened, which door the contestant chose and just sees two doors left unopened. For this bystander, the probabilities are indeed 50/50 between both doors - as they have no additional information - but for you as the contestant, the probabilities are 2/3 in favour of switching from your initial choice.</p>
 </section>
 </section>
-<section id="the-solution" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="the-solution"><span class="header-section-number">3</span> The solution</h2>
+<section id="the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution">The solution</h2>
 <p>So, here is the full solution.</p>
 <p>We have gone over the probabilities at the initial choice of door by the contestant, the one chosen has probability <img src="https://latex.codecogs.com/png.latex?p=1/3"> of having the car, the other two doors have a combined probability of <img src="https://latex.codecogs.com/png.latex?1-p=2/3"> of having the car. The probabilities add up to 1 since there is only one car and one door must be opened - i.e.&nbsp;something will happen, either a car is revealed or not.</p>
 <p>Although there is 2/3 probability of the car being behind either of the other two doors, we don’t know which one out of those two to pick. We need more information to make a better choice.</p>
@@ -245,8 +245,8 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 </iframe>
 <p>The scene from 21 is also of interest from the other topic discussed, namely Newton’s method - or Newton-Raphson method - for finding roots of functions and the possible issues with that method. This is a topic for another time though.</p>
 </section>
-<section id="different-host-behavior" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="different-host-behavior"><span class="header-section-number">4</span> Different host behavior</h2>
+<section id="different-host-behavior" class="level2">
+<h2 class="anchored" data-anchor-id="different-host-behavior">Different host behavior</h2>
 <p>It is important to note that the solution to the Monty Hall Problem is dependent on the host’s behavior. If the host’s actions were different, the probabilities and optimal strategy could change. For example, if the host were to open a door at random, without knowledge of what is behind the doors, the probabilities would indeed be 50/50 between the two remaining doors after one is opened, and switching or staying would not matter. In other words, such behaviour by the host would not provide any additional information to the contestant.</p>
 <p>We can look at various different host behaviors and see how they affect the solution:</p>
 <ol type="1">
@@ -257,8 +257,8 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 </ol>
 <p>These variations illustrate how the host’s behavior can significantly impact the probabilities and optimal strategies in the Monty Hall Problem.</p>
 </section>
-<section id="reinforcement-through-simulation" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="reinforcement-through-simulation"><span class="header-section-number">5</span> Reinforcement through simulation</h2>
+<section id="reinforcement-through-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="reinforcement-through-simulation">Reinforcement through simulation</h2>
 <p>To further reinforce the understanding of the Monty Hall Problem, we can simulate the game multiple times to see how often switching versus staying leads to winning the car. Below is a simple Python simulation that demonstrates this. The contestant and host choices are randomly (pseud-randomly) generated to mimic the game scenario. The simulation is run for a large number of trials to get statistically significant results, providing a point estimate of the probability of choosing the right door <img src="https://latex.codecogs.com/png.latex?p"> vs.&nbsp;switching <img src="https://latex.codecogs.com/png.latex?1-p">.</p>
 <p>This code is essentially simulating a Bernoulli process where each trial results in either a win or a loss based on the chosen strategy (switching or staying). By running the simulation multiple times, we can estimate the sample probabilities of winning for each strategy, taking advantage of the law of large numbers for the sample probabilities converging towards the true probabilities.</p>
 <p>Run the following code cell by clicking “RUN CODE” in the upper right corner. Adjust the code as you please to experiment with different numbers of trials or strategies.</p>
