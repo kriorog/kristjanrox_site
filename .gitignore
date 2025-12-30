@@ -1,5 +1,5 @@
 /.quarto/
 /_site/
 /.venv/
-
 **/*.quarto_ipynb
+.DS_Store
