@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/sadi carnot/sadi_carnot.html",
+      "/articles/newton 2nd law/newton_2nd_law.html",
       "/articles/monty_hall/monty_hall.html"
     ]
   }
