@@ -259,12 +259,15 @@ window.Quarto = {
 <p>Let’s develop the equation of motion for a rocket in one dimension. We start with the general form</p>
 <p><span class="math display">\[\vec{F} = \frac{d\vec{p}}{dt} = m\vec{a} + \frac{dm}{dt}\vec{v}.\]</span></p>
 <p>Every rocket, regardless of the actual propulsion device, generates thrust by expelling mass. The <span class="math inline">\(dm/dt\)</span> term is therefore important for thrust. There is however a problem with this formulation - without additional context. A stationary rocket (<span class="math inline">\(v=0\)</span>) can generate thrust by expelling mass <span class="math inline">\(dm/dt&lt;0\)</span>. However, that term vanishes at time <span class="math inline">\(t=0\)</span> if <span class="math inline">\(\vec{v}(0)=\vec{0}\)</span>.</p>
-<p>We need to clarify that <span class="math inline">\(\vec{v}=\vec{v}(t)\)</span> in the above formulation is the velocity of the expelled mass relative to the rocket. Let’s call that velocity <span class="math inline">\(\vec{V}_e\)</span>.</p>
+<p>We need to clarify that <span class="math inline">\(\vec{v}=\vec{v}(t)\)</span> in the above formulation is the velocity of the expelled mass relative to the rocket. Let’s call that velocity <span class="math inline">\(\vec{V}_e\)</span>, which has direction opposite the rocket’s velocity vector <span class="math inline">\(\vec{v}\)</span>,</p>
 <p><span class="math display">\[\vec{F} = m\vec{a} - \frac{dm}{dt}\vec{V}_e.\]</span></p>
 <p>In the absence of the atmosphere, we can ignore aerodynamic drag. However, to allow for it, we’ll leave the external force component <span class="math inline">\(F\)</span> in the equation, to yield after rearranging.</p>
-<p>As we are in one dimenson, we can drop the vector notation. However, since <span class="math inline">\(\vec{V}_e\)</span> is directed rearward relative to the acceleration vector <span class="math inline">\(\vec{a}\)</span>, we have to include a negative sign on its magnitude.</p>
-<p><span class="math display">\[F = ma + \frac{dm}{dt}V_e.\]</span></p>
-<p>It is understandable that this derivation leaves some questions unanswered. In particular, consider that we have the acceleration term of the rocket <span class="math inline">\(\vec{a}=\vec{a}(t)\)</span> in an inertial frame of reference, but the thrust component has a velocity <span class="math inline">\(\vec{v}=-\vec{V}_e\)</span> which is measured in the rocket’s frame of reference. How does that make sense?</p>
+<p>As we are in one dimenson, we can drop the vector notation,</p>
+<p><span class="math display">\[F = ma - \frac{dm}{dt}V_e.\]</span></p>
+<p>Since the term <span class="math inline">\(\frac{dm}{dt}V_e\)</span> is thrust (a force), we can rearrange the terms to obtain</p>
+<p><span class="math display">\[F + \frac{dm}{dt}V_e = ma\]</span></p>
+<p>As <span class="math inline">\(dm/dt&lt;0\)</span> and <span class="math inline">\(V_e&lt;0\)</span> the thrust term is positive - which makes sense. Increased thrust should yield an increase in acceleration <span class="math inline">\(a\)</span> for a given mass <span class="math inline">\(m\)</span>.</p>
+<p>It is understandable that this derivation leaves some questions unanswered. In particular, consider that we have the acceleration term of the rocket <span class="math inline">\(\vec{a}=\vec{a}(t)\)</span> in an inertial frame of reference, but the thrust component has a velocity <span class="math inline">\(\vec{V}_e\)</span> which is observed in the rocket’s frame of reference. How does that make sense?</p>
 <section id="a-deeper-dive-into-the-rocket-equation" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="a-deeper-dive-into-the-rocket-equation"><span class="header-section-number">6.1</span> A deeper dive into the rocket equation</h3>
 <p>Consider the following two states of the rocket, one at time <span class="math inline">\(t\)</span> before a mass <span class="math inline">\(dm\)</span> is expelled, and one a short time interval <span class="math inline">\(dt\)</span> after.</p>
@@ -278,17 +281,17 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 </figcaption>
 </figure>
 </div>
-<p>The quantity <span class="math inline">\(dm\)</span> is the change in the rocket’s mass, which is negative. It’s magnitude is equal to the mass of the expelled fuel.</p>
+<p>The quantity <span class="math inline">\(dm\)</span> is the change in rocket mass, which is negative. The mass of the expelled fuel is therefore -dm.</p>
 <p>The differential change in momentum <span class="math inline">\(dp\)</span> between these two different points in time is</p>
 <p><span class="math display">\[
 \begin{align}
-    p(t+dt) - p(t)  &amp;= dm (\vec{v}-\vec{V}_e) + (m-dm)(\vec{v}+d\vec{v}) - m\vec{v}\\
-                    &amp;= dm (\vec{v}-\vec{V}_e-\vec{v}-d\vec{v}) + md\vec{v}\\
+    p(t+dt) - p(t)  &amp;= -dm (\vec{v}+\vec{V}_e) + (m-dm)(\vec{v}+d\vec{v}) - m\vec{v}\\
+                    &amp;= -dm (\vec{v}+\vec{V}_e-\vec{v}-d\vec{v}) + m\vec{v} - m\vec{v} - md\vec{v}\\
                     &amp;= -dm \vec{V}_e - \underbrace{(dm)(d\vec{v})}_{\approx 0} + md\vec{v}\\
                     &amp;= -dm \vec{V}_e + md\vec{v}.
 \end{align}
 \]</span></p>
-<p>Keep in mind that the inerital velocity vector of the exhaust mass <span class="math inline">\(dm\)</span> is <span class="math inline">\(\vec{v}+\vec{V}_e\)</span>, while <span class="math inline">\(\vec{V}_e\)</span> is the exhaust velocity vector relative to the rocket (accelerating frame of reference).</p>
+<p>Keep in mind that the inertial velocity vector of the exhaust mass <span class="math inline">\(dm\)</span> is <span class="math inline">\(\vec{v}+\vec{V}_e\)</span>, while <span class="math inline">\(\vec{V}_e\)</span> is the exhaust velocity vector relative to the rocket (accelerating frame of reference).</p>
 <p>The second order differential component <span class="math inline">\(dmd\vec{v}\)</span> is much smaller than other components, and is thus taken to be zero.</p>
 <p>We have now set up a finite difference in momentum <span class="math inline">\(\Delta \vec{p}\)</span> between these two points in time. Dividing both sides by <span class="math inline">\(\Delta t\)</span> and taking the limit as <span class="math inline">\(t \to 0\)</span> yields</p>
 <p><span class="math display">\[
@@ -297,9 +300,11 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
                         &amp;= m\vec{a} - \frac{dm}{dt}\vec{V}_e.
 \end{align}
 \]</span></p>
-<p>As before, the exhaust velocity vector <span class="math inline">\(\vec{V}_e\)</span> is directly opposite the acceleration vector <span class="math inline">\(\vec{a}\)</span>, i.e.&nbsp;they are parallel but opposite. We can then drop the vector notation and include a negative sign on the exhaust velocity to obtain</p>
-<p><span class="math display">\[F = ma + \frac{dm}{dt}V_e.\]</span></p>
-<p>Keep in mind that <span class="math inline">\(dm/dt &lt; 0\)</span>.</p>
+<p>As before, we can drop the vector notation,</p>
+<p><span class="math display">\[F = ma - \frac{dm}{dt}V_e,\]</span></p>
+<p>and finally rearrange to</p>
+<p><span class="math display">\[F + \frac{dm}{dt}V_e = ma.\]</span></p>
+<p>Keep in mind that <span class="math inline">\(dm/dt &lt; 0\)</span> and <span class="math inline">\(V_e&lt;0\)</span>, so the thrust term is positive.</p>
 </section>
 <section id="what-does-this-demonstrate" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="what-does-this-demonstrate"><span class="header-section-number">6.2</span> What does this demonstrate</h3>
