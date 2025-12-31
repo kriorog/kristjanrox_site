@@ -29,11 +29,11 @@ website:
       - icon: rss
         href: index.xml
 
-    google-analytics: "G-2EKD2JNKMF"
-    cookie-consent:
-      type: express
-      style: headline
-      palette: dark
+  google-analytics: "G-2EKD2JNKMF"
+  cookie-consent:
+    type: express
+    style: simple
+    palette: dark
       
 format:
   html:
