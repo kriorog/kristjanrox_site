@@ -158,7 +158,9 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 <h3 class="anchored" data-anchor-id="what-does-this-demonstrate">What does this demonstrate</h3>
 <p>This derivation shows that even starting with the general form of</p>
 <p><img src="https://latex.codecogs.com/png.latex?F%20=%20%5Cfrac%7Bdp%7D%7Bdt%7D%20=%20ma%20+%20%5Cfrac%7Bdm%7D%7Bdt%7Dv"></p>
-<p>can even be a step to far in some cases. We should have started with <img src="https://latex.codecogs.com/png.latex?dp/dt"> and derived that relation and then relate it to any external forces with the 2nd law.</p>
+<p>can even be a step to far in some cases.</p>
+<p>For the rocket, considering <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bp%7D=m%5Cvec%7Bv%7D"> and taking its time derivative is not a representative model of the rocket’s change in momentum with time.</p>
+<p>We should have started with <img src="https://latex.codecogs.com/png.latex?dp/dt"> and derived that relation and then relate it to any external forces with the 2nd law - as was shown above.</p>
 </section>
 </section>
 <section id="a-tangent---mass-and-the-2nd-law-in-other-contexts" class="level2">
