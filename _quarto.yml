@@ -28,6 +28,9 @@ website:
         href: mailto:kriorog@eremreykjavik.com
       - icon: rss
         href: index.xml
+
+    google-analytics: "G-2EKD2JNKMF"
+    cookie-consent: true
       
 format:
   html:
@@ -42,3 +45,4 @@ editor: source # other option is visual
 
 resources:
   - CNAME
+
