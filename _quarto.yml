@@ -3,7 +3,7 @@ project:
 
 website:
   # title: "Kristjan Röx"
-  site-url: "https://kriorog.github.io/kristjanrox_site/"
+  site-url: "www.kristjanrox.com"
   description: "Röx website"
   favicon: "figures/rox_logo_transparent.png"
   draft-mode: gone
