@@ -30,7 +30,10 @@ website:
         href: index.xml
 
     google-analytics: "G-2EKD2JNKMF"
-    cookie-consent: true
+    cookie-consent:
+      type: express
+      style: headline
+      palette: dark
       
 format:
   html:
