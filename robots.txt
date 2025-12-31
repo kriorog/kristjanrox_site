@@ -1,1 +1,1 @@
-Sitemap: https://kriorog.github.io/kristjanrox_site/sitemap.xml
+Sitemap: www.kristjanrox.com/sitemap.xml

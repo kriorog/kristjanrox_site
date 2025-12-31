@@ -405,7 +405,7 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/kriorog\.github\.io\/kristjanrox_site\/");
+        var filterRegex = new RegExp("www\.kristjanrox\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

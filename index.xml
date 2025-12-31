@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Kristjan Röx</title>
-<link>https://kriorog.github.io/kristjanrox_site/</link>
-<atom:link href="https://kriorog.github.io/kristjanrox_site/index.xml" rel="self" type="application/rss+xml"/>
+<link>www.kristjanrox.com/</link>
+<atom:link href="www.kristjanrox.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Röx website</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Tue, 30 Dec 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Relative efficiency - a la Sadi Carnot</title>
   <dc:creator>Röx </dc:creator>
-  <link>https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/sadi_carnot.html</link>
+  <link>www.kristjanrox.com/articles/03_sadi_carnot/sadi_carnot.html</link>
   <description><![CDATA[ 
 
 
@@ -63,14 +63,14 @@
 </section>
 
  ]]></description>
-  <guid>https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/sadi_carnot.html</guid>
+  <guid>www.kristjanrox.com/articles/03_sadi_carnot/sadi_carnot.html</guid>
   <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/03_sadi_carnot/figures/Sadi_Carnot.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="www.kristjanrox.com/articles/03_sadi_carnot/figures/Sadi_Carnot.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Newton’s 2nd Law - a bit more than you think</title>
   <dc:creator>Röx </dc:creator>
-  <link>https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/newton_2nd_law.html</link>
+  <link>www.kristjanrox.com/articles/02_newton_2nd_law/newton_2nd_law.html</link>
   <description><![CDATA[ 
 
 
@@ -134,7 +134,7 @@
 <div id="fig-conservation_of_momentum" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-conservation_of_momentum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/figures/rocket_masses.png" height="300" class="figure-img">
+<img src="www.kristjanrox.com/articles/02_newton_2nd_law/figures/rocket_masses.png" height="300" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conservation_of_momentum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Conservation of momentum for rocket at a given time
@@ -180,14 +180,14 @@ Figure&nbsp;1: Conservation of momentum for rocket at a given time
 </section>
 
  ]]></description>
-  <guid>https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/newton_2nd_law.html</guid>
+  <guid>www.kristjanrox.com/articles/02_newton_2nd_law/newton_2nd_law.html</guid>
   <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/02_newton_2nd_law/figures/newton.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="www.kristjanrox.com/articles/02_newton_2nd_law/figures/newton.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>The Monty Hall Problem</title>
   <dc:creator>Röx </dc:creator>
-  <link>https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/monty_hall.html</link>
+  <link>www.kristjanrox.com/articles/01_monty_hall/monty_hall.html</link>
   <description><![CDATA[ 
 
 
@@ -297,9 +297,9 @@ WyIuLi8uLi9DTkFNRSJd
 </section>
 
  ]]></description>
-  <guid>https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/monty_hall.html</guid>
+  <guid>www.kristjanrox.com/articles/01_monty_hall/monty_hall.html</guid>
   <pubDate>Mon, 29 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://kriorog.github.io/kristjanrox_site/articles/01_monty_hall/figures/Monty_open_door.png" medium="image" type="image/png" height="80" width="144"/>
+  <media:content url="www.kristjanrox.com/articles/01_monty_hall/figures/Monty_open_door.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 </channel>
 </rss>
