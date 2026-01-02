@@ -10,59 +10,7 @@
 <atom:link href="www.kristjanrox.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Röx website</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sun, 04 Jan 2026 00:00:00 GMT</lastBuildDate>
-<item>
-  <title>Does zero probability imply impossibility?</title>
-  <dc:creator>Röx </dc:creator>
-  <link>www.kristjanrox.com/articles/04_zero_probability/zero_prob.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Consider a random event <img src="https://latex.codecogs.com/png.latex?X"> having probability <img src="https://latex.codecogs.com/png.latex?p(X)=0">. Does it mean <img src="https://latex.codecogs.com/png.latex?X"> cannot occur, i.e.&nbsp;is impossible?</p>
-<section id="probability-space" class="level1">
-<h1>Probability space</h1>
-<p>Consider the set <img src="https://latex.codecogs.com/png.latex?%5COmega"> containing all possible events, or outcomes of a random process. Let <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> be a subset of <img src="https://latex.codecogs.com/png.latex?%5COmega"> containing events that meet a certain criteria, which we can also call the event space. The probability function <img src="https://latex.codecogs.com/png.latex?P"> is a set function that assigns each event <img src="https://latex.codecogs.com/png.latex?E%20%5Cin%20%5Cmathcal%7BF%7D"> its probability <img src="https://latex.codecogs.com/png.latex?P(E):%20%5Cmathcal%7BF%7D%20%5Csubseteq%20%5COmega%20%5Cto%20%5B0,%201%5D">.</p>
-<p>The triple <img src="https://latex.codecogs.com/png.latex?(%5COmega,%20%5Cmathcal%7BF%7D,%20P)"> defines the probability space, which satisfies the <a href="https://en.wikipedia.org/wiki/Probability_axioms">Kolmogorov aixioms</a>.</p>
-<section id="discrete-random-variables" class="level2">
-<h2 class="anchored" data-anchor-id="discrete-random-variables">Discrete random variables</h2>
-<p>A typical example is a six-sided dice, where the outcomes of one toss are in the set <img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5C%7B1,%202,%20%5Cdots,%206%5C%7D">.</p>
-<p>Let the random variable <img src="https://latex.codecogs.com/png.latex?X"> describe the outcome of a die throw, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5COmega">. We can define the event space <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> based on desired values of <img src="https://latex.codecogs.com/png.latex?X">, i.e.&nbsp;for <img src="https://latex.codecogs.com/png.latex?X=2"> or for <img src="https://latex.codecogs.com/png.latex?X"> to be even, as an example.</p>
-<p>The probability of the entire event space <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D">, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(%5Cmathcal%7BF%7D)"> - assuming uniform probabilities - is the mapping</p>
-<p><img src="https://latex.codecogs.com/png.latex?P(%5Cmathcal%7BF%7D)%20=%20%5Cfrac%7B%5Ctext%7B%5C#%20of%20events%20in%20%7D%20%5Cmathcal%7BF%7D%7D%7B%5Ctext%7BTotal%20events%20in%20%7D%20%5COmega%7D%20=%20%5Csum_%7Bj=1%7D%5E%7BN_%7B%5Cmathcal%7BF%7D%7D%7D%20P(E_j)"></p>
-<p>where <img src="https://latex.codecogs.com/png.latex?N_%7B%5Cmathcal%7BF%7D%7D"> is the size of the event space.</p>
-<p>So the probability of a singe value of <img src="https://latex.codecogs.com/png.latex?X">, i.e.&nbsp;</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D%20=%20%5C%7BX%20%7C%20X%20%5Cin%20%5COmega,%20X=2%5C%7D%20=%20%5C%7B2%5C%7D"></p>
-<p>is <img src="https://latex.codecogs.com/png.latex?P(%5Cmathcal%7BF%7D)%20=%20P(X=2)%20=%201/6"> and is <img src="https://latex.codecogs.com/png.latex?3/6=1/2"> to throw an even or odd value.</p>
-</section>
-<section id="continuous-random-variables" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-random-variables">Continuous random variables</h2>
-<p>For the dice, the random variable <img src="https://latex.codecogs.com/png.latex?X"> is discrete, i.e.&nbsp;it can only take certain specific values. We can also consider a continous random variable.</p>
-<p>Let <img src="https://latex.codecogs.com/png.latex?x"> take values between 0 and 1, both included. Then we can define</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5B0,%201%5D%20=%20%5C%7Bx%20%7C%200%20%5Cleq%20x%20%5Cleq%201%5C%7D."></p>
-<p>This outcome set has infinitely many elmements, i.e.&nbsp;there are infinitely many real numbers between 0 and 1. Consequently, a uniform probability mapping <img src="https://latex.codecogs.com/png.latex?P"> is undefined due to the denominator being infinite. We can still assign a value to the probability of choosing a single real number <img src="https://latex.codecogs.com/png.latex?a"> from a subset <img src="https://latex.codecogs.com/png.latex?%5COmega_N"> with <img src="https://latex.codecogs.com/png.latex?N"> elements, which contains <img src="https://latex.codecogs.com/png.latex?a">, and let <img src="https://latex.codecogs.com/png.latex?%5COmega_N%20%5Cto%20%5COmega"></p>
-<p><img src="https://latex.codecogs.com/png.latex?P(X=a)%20=%20%5Clim_%7BN%20%5Cto%20%5Cinfty%7D%20%5Cfrac%7B1%7D%7BN%7D%20=%200."></p>
-<p>If the subsets <img src="https://latex.codecogs.com/png.latex?%5COmega_N"> do not contain a, e.g.&nbsp;choosing <img src="https://latex.codecogs.com/png.latex?a=1.1">, the probability is trivial as</p>
-<p><img src="https://latex.codecogs.com/png.latex?P(X=a)%20=%20%5Clim_%7BN%20%5Cto%20%5Cinfty%7D%20%5Cfrac%7B0%7D%7BN%7D%20=%200."></p>
-<p>So here we have two possibilities for drawing a random variable <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5COmega"> which both have zero probability - are they both impossible?</p>
-</section>
-</section>
-<section id="impossibility" class="level1">
-<h1>Impossibility</h1>
-<p>There is only one way for the event space <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> to be impossible. That is for at least one event in <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> to not be in <img src="https://latex.codecogs.com/png.latex?%5COmega">.</p>
-<p>For example, throwing a six-sided dice and getting 7 is impossible, which would have zero probability and is impossible.</p>
-<p>However, a fully reasonable outcome with zero probability is not impossible, but rather <em>improbable</em>. Drawing <img src="https://latex.codecogs.com/png.latex?a=0.5"> from the real interval <img src="https://latex.codecogs.com/png.latex?%5B0,%201%5D"> under uniform probabilities is perferctly reasonable, but extremely improbable considering the infinite number of possible draws. However, drawing <img src="https://latex.codecogs.com/png.latex?a=1.1"> is impossible, similar to the discrete dice above.</p>
-<p>Therefore, an event with zero probability does not imply impossibility. However, the reverse is true - an impossible event has zero probability.</p>
-
-
-</section>
-
- ]]></description>
-  <guid>www.kristjanrox.com/articles/04_zero_probability/zero_prob.html</guid>
-  <pubDate>Sun, 04 Jan 2026 00:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Tue, 30 Dec 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Relative efficiency - a la Sadi Carnot</title>
   <dc:creator>Röx </dc:creator>
