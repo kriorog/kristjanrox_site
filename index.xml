@@ -10,7 +10,101 @@
 <atom:link href="www.kristjanrox.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Röx website</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Tue, 30 Dec 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 04 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Does zero probability imply impossibility?</title>
+  <dc:creator>Röx </dc:creator>
+  <link>www.kristjanrox.com/articles/04_zero_probability/zero_prob_v2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Consider a random event <img src="https://latex.codecogs.com/png.latex?X"> having probability <img src="https://latex.codecogs.com/png.latex?p(X)=0">. Does it mean <img src="https://latex.codecogs.com/png.latex?X"> cannot occur, i.e.&nbsp;is impossible?</p>
+<section id="an-informal-approach" class="level1">
+<h1>An informal approach</h1>
+<p>Let’s consider a random process which assigns values to the random variable <img src="https://latex.codecogs.com/png.latex?X">. Let <img src="https://latex.codecogs.com/png.latex?%5COmega"> be the set of all possible outcomes of <img src="https://latex.codecogs.com/png.latex?X">, i.e.&nbsp;we draw <img src="https://latex.codecogs.com/png.latex?X"> from <img src="https://latex.codecogs.com/png.latex?%5COmega"> or that <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5COmega">. Now, <img src="https://latex.codecogs.com/png.latex?%5COmega"> can be a finite with only <img src="https://latex.codecogs.com/png.latex?N"> elements or an infinite set.</p>
+<p>Given this information, we can’t say what the probability of <img src="https://latex.codecogs.com/png.latex?X"> is, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X)">. The probaility function is one that we have assigned to the random process, which we are confident will describe the relative frequency of different <img src="https://latex.codecogs.com/png.latex?X"> values from repeated trials of the random process. It is therefore dependent on what elements are in <img src="https://latex.codecogs.com/png.latex?%5COmega">.</p>
+<section id="a-finite-number-of-possible-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="a-finite-number-of-possible-outcomes">A finite number of possible outcomes</h2>
+<p>Say that <img src="https://latex.codecogs.com/png.latex?%5COmega"> contains all natural numbers between 1 and 6, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5C%7B1,%202,%20%5Cdots%20,%206%5C%7D">. This could describe the possible outcomes of a single standard die. The random variable <img src="https://latex.codecogs.com/png.latex?X"> then describes the value obtained in each trial, i.e.&nbsp;each die cast. The probability of <img src="https://latex.codecogs.com/png.latex?X"> taking a specific value in <img src="https://latex.codecogs.com/png.latex?%5COmega"> depends on the die itself and how it is cast.</p>
+<p>Let’s assume the die to be <em>perfect</em> and the cast process to be fair, then one value in <img src="https://latex.codecogs.com/png.latex?%5COmega"> will not occur more often than any other value in repeated trials. For such a process, the frequency of all values approach the same value as the number of trials increases. For such a result, a <em>discrete uniform probability distribution</em> would be an appropriate probability function for this process. We would then say that the die value in each cast follows a uniform distribution, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?X%20%5Csim%20%5Cmathcal%7BU%7D(N_%7B%5COmega%7D)"> and the probability of obtaining a value <img src="https://latex.codecogs.com/png.latex?X=a">, where <img src="https://latex.codecogs.com/png.latex?a%20%5Cin%20%5COmega">, is <img src="https://latex.codecogs.com/png.latex?P(X=a)=1/N_%7B%5COmega%7D%20=%201/6">.</p>
+<p>This is the same interpretation as the classical definition of probability a la Bernouilli and Laplace:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Classical definition of probability">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Classical definition of probability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The probability of an event is the ratio of the number of cases favorable to it, to the number of all cases possible when nothing leads us to expect that any one of these cases should occur more than any other, which renders them, for us, equally possible.</p>
+</div>
+</div>
+<p>Back to the question…note that each possible outcome of <img src="https://latex.codecogs.com/png.latex?X"> is equally probable, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X=a)=1/6"> for all <img src="https://latex.codecogs.com/png.latex?a%20%5Cin%20%5COmega">. So only values not in <img src="https://latex.codecogs.com/png.latex?%5COmega"> will have probability zero, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X=a)=0"> only if <img src="https://latex.codecogs.com/png.latex?a%20%5Cnotin%20%5COmega">. That is not an interesting results, an I would say it to be trivial. The only such results which one could possibly argue to be theoretically possible is for the die not to return any element in <img src="https://latex.codecogs.com/png.latex?%5COmega">, i.e.&nbsp;to return the empty set. That would describe the case where the die ends up balanced on an edge, without any particular side facing up. However, such an outcome has most likely never been observed and is accurately assigned a zero probability by the uniform distribution, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X=%5Cemptyset)=0">. However, an outcome of values <img src="https://latex.codecogs.com/png.latex?X%3E6"> are absurd - and have <img src="https://latex.codecogs.com/png.latex?P(X%3E6)=0"> so each value also has zero probability since <img src="https://latex.codecogs.com/png.latex?P(X%3E6)%20=%201%20-%20P(X%20%5Cleq%206)%20=%201-1%20=0"> - so this result is indeed impossible.</p>
+<p>Therefore, for the discrete random variable case, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?X"> is discrete, with finite possible outcomes in <img src="https://latex.codecogs.com/png.latex?%5COmega">, the only outcomes with zero probability are those which are impossible by definition.</p>
+</section>
+<section id="what-if-n_omega-to-infty" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-n_omega-to-infty">What if <img src="https://latex.codecogs.com/png.latex?N_%7B%5COmega%7D%20%5Cto%20%5Cinfty">?</h2>
+<p>Consider now that the size of the finite outcome set <img src="https://latex.codecogs.com/png.latex?%5COmega"> increases towards <img src="https://latex.codecogs.com/png.latex?%5Cinfty">. We can do that in essentially two ways, either <img src="https://latex.codecogs.com/png.latex?%5COmega"> includes more and more of until <img src="https://latex.codecogs.com/png.latex?%5COmega"> equals the set of natural numbers, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5Cmathbb%7BN%7D">, or it includes more values between <img src="https://latex.codecogs.com/png.latex?1"> and <img src="https://latex.codecogs.com/png.latex?6"> such that <img src="https://latex.codecogs.com/png.latex?%5COmega%20%5Cto%20%5B1,%206%5D">.</p>
+<p>A key difference in <img src="https://latex.codecogs.com/png.latex?%5COmega"> between these two options, is that the first case where <img src="https://latex.codecogs.com/png.latex?%5COmega%20%5Cto%20%5Cmathbb%7BN%7D"> is that <img src="https://latex.codecogs.com/png.latex?%5COmega"> remains <em>countably infinite</em>, i.e.&nbsp;there exists a one-to-one mapping between each element of <img src="https://latex.codecogs.com/png.latex?%5COmega"> and the natural numbers. In the latter case, where <img src="https://latex.codecogs.com/png.latex?%5COmega%20%5Cto%20%5B1,%206%5D">, is that <img src="https://latex.codecogs.com/png.latex?%5COmega"> becomes <em>uncountably infinite</em>.</p>
+<p>In both cases, the number of possible outcomes approaches infinity with increasing size of <img src="https://latex.codecogs.com/png.latex?%5COmega">. As the uniform probability assumption still holds, each element in the set is equally likely to be obtained in each trial. Therefore, we can state that <img src="https://latex.codecogs.com/png.latex?%0AP(X=a)%20=%20%5Clim_%7BN_%7B%5COmega%7D%20%5Cto%20%5Cinfty%7D%20%5Cfrac%7B1%7D%7BN_%7B%5COmega%7D%7D%20=%200.%0A"></p>
+<p>However, if <img src="https://latex.codecogs.com/png.latex?N_%7B%5COmega%7D"> remains finite, although approaching infinity the probability <img src="https://latex.codecogs.com/png.latex?1/N_%7B%5COmega%7D"> is defined and finite, although possibly very small or infinitesimal, but not zero. When <img src="https://latex.codecogs.com/png.latex?%5COmega"> has become either <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BN%7D"> or <img src="https://latex.codecogs.com/png.latex?%5B1,6%5D"> the discrete uniform distribution is no longer defined.</p>
+<p>However, when <img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5B1,6%5D"> the outcome set is a continous range of reals. For such a problem, we can use a continous uniform distribution. We can use a probability density function <img src="https://latex.codecogs.com/png.latex?f_X(x)%20=%201/(6-1)=1/5"> where the probability of obtaining a value <img src="https://latex.codecogs.com/png.latex?X"> such that <img src="https://latex.codecogs.com/png.latex?1%20%5Cleq%20X%20%5Cleq%20a"> is <img src="https://latex.codecogs.com/png.latex?%0AP(1%20%5Cleq%20X%20%5Cleq%20a)%20=%20%5Cint_%7B1%7D%5E%7Ba%7Df_X(a)dx%0A"></p>
+<p>Note here that the probability of obtaining <img src="https://latex.codecogs.com/png.latex?X=a"> is <img src="https://latex.codecogs.com/png.latex?%0AP(X%20=%20a)%20=%20P(a%20%5Cleq%20X%20%5Cleq%20a)%20=%20%5Cint_%7Ba%7D%5E%7Ba%7D%20f_X(a)dx%20=%20F_X(a)%20-%20F_X(a)%20=%200.%0A"></p>
+<p>So the probability of obtaining exactly a specific remains zero, but the probability of obtaining a value in an interval is non-zero, with <img src="https://latex.codecogs.com/png.latex?P(1%20%5Cleq%20X%20%5Cleq%206)%20=%201">. This matches our previous conclusion, that as the number of possible outcomes increases to infinity the probability of a specific value approaches zero.</p>
+<p>Applying the same logic to the case when <img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5Cmathbb%7BN%7D"> is not as well defined, as it now has become a countably infinite set of discrete values. A discrete uniform distribution cannot be applied on such a set, since the probability of each value would be zero while the sum of the probability of each value must sum to unity. A density function cannot be defined as well since the possible values are not continuous. However, for the sake of this argument, we can use the limit approach as <img src="https://latex.codecogs.com/png.latex?%5COmega%20%5Cto%20%5Cmathcal%7BN%7D"> and say that <img src="https://latex.codecogs.com/png.latex?P(X=a)%20=%201/N_%7B%5COmega%7D%20%5Cto%200"> for all <img src="https://latex.codecogs.com/png.latex?a%20%5Cin%20%5COmega">.</p>
+<p>Regardless - some value must be obtained in each trial. So why can’t, say, <img src="https://latex.codecogs.com/png.latex?X=4"> regardless of <img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5Cmathcal%7BN%7D"> or <img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5B1,6%5D">? It can, absolutely, the problem is that it’s just extremely improbable - yet not impossible - compared to all possible outcomes. We just have a problem assigning non-zero probabilities to values from discrete and countably infinite outcome sets. Therefore, an outcome <img src="https://latex.codecogs.com/png.latex?X=4"> is possible, even though <img src="https://latex.codecogs.com/png.latex?P(X=4)=0">.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Given the preceeding informal discussion, we can argue that an event with zero probability does not have to be impossible - but an impossible event will have zero probability.</p>
+</section>
+</section>
+<section id="a-more-formal-approach---using-probability-spaces" class="level1">
+<h1>A more formal approach - using probability spaces</h1>
+<p>Consider the set <img src="https://latex.codecogs.com/png.latex?%5COmega"> containing all possible events, or outcomes of a random process. Let <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> be a subset of <img src="https://latex.codecogs.com/png.latex?%5COmega"> containing events that meet a certain criteria, which we can also call the event space. The probability function <img src="https://latex.codecogs.com/png.latex?P"> is a set function that assigns each event <img src="https://latex.codecogs.com/png.latex?E%20%5Cin%20%5Cmathcal%7BF%7D"> its probability <img src="https://latex.codecogs.com/png.latex?P(E):%20%5Cmathcal%7BF%7D%20%5Csubseteq%20%5COmega%20%5Cto%20%5B0,%201%5D">.</p>
+<p>The triple <img src="https://latex.codecogs.com/png.latex?(%5COmega,%20%5Cmathcal%7BF%7D,%20P)"> defines the probability space, which satisfies the <a href="https://en.wikipedia.org/wiki/Probability_axioms">Kolmogorov aixioms</a>.</p>
+<section id="discrete-random-variables" class="level2">
+<h2 class="anchored" data-anchor-id="discrete-random-variables">Discrete random variables</h2>
+<p>A typical example is a six-sided dice, where the outcomes of one toss are in the set <img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5C%7B1,%202,%20%5Cdots,%206%5C%7D">.</p>
+<p>Let the random variable <img src="https://latex.codecogs.com/png.latex?X"> describe the outcome of a die throw, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5COmega">. We can define the event space <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> based on desired values of <img src="https://latex.codecogs.com/png.latex?X">, i.e.&nbsp;for <img src="https://latex.codecogs.com/png.latex?X=2"> or for <img src="https://latex.codecogs.com/png.latex?X"> to be even, as an example.</p>
+<p>The probability of the entire event space <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D">, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(%5Cmathcal%7BF%7D)"> - assuming uniform probabilities - is the mapping</p>
+<p><img src="https://latex.codecogs.com/png.latex?P(%5Cmathcal%7BF%7D)%20=%20%5Cfrac%7B%5Ctext%7B%5C#%20of%20events%20in%20%7D%20%5Cmathcal%7BF%7D%7D%7B%5Ctext%7BTotal%20events%20in%20%7D%20%5COmega%7D%20=%20%5Csum_%7Bj=1%7D%5E%7BN_%7B%5Cmathcal%7BF%7D%7D%7D%20P(E_j)"></p>
+<p>where <img src="https://latex.codecogs.com/png.latex?N_%7B%5Cmathcal%7BF%7D%7D"> is the size of the event space.</p>
+<p>So the probability of a singe value of <img src="https://latex.codecogs.com/png.latex?X">, i.e.&nbsp;</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D%20=%20%5C%7BX%20%7C%20X%20%5Cin%20%5COmega,%20X=2%5C%7D%20=%20%5C%7B2%5C%7D"></p>
+<p>is <img src="https://latex.codecogs.com/png.latex?P(%5Cmathcal%7BF%7D)%20=%20P(X=2)%20=%201/6"> and is <img src="https://latex.codecogs.com/png.latex?3/6=1/2"> to throw an even or odd value.</p>
+</section>
+<section id="continuous-random-variables" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-random-variables">Continuous random variables</h2>
+<p>For the dice, the random variable <img src="https://latex.codecogs.com/png.latex?X"> is discrete, i.e.&nbsp;it can only take certain specific values. We can also consider a continous random variable.</p>
+<p>Let <img src="https://latex.codecogs.com/png.latex?x"> take values between 0 and 1, both included. Then we can define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5B0,%201%5D%20=%20%5C%7Bx%20%7C%200%20%5Cleq%20x%20%5Cleq%201%5C%7D."></p>
+<p>This outcome set has infinitely many elmements, i.e.&nbsp;there are infinitely many real numbers between 0 and 1. Consequently, a uniform probability mapping <img src="https://latex.codecogs.com/png.latex?P"> is undefined due to the denominator being infinite. We can still assign a value to the probability of choosing a single real number <img src="https://latex.codecogs.com/png.latex?a"> from a subset <img src="https://latex.codecogs.com/png.latex?%5COmega_N"> with <img src="https://latex.codecogs.com/png.latex?N"> elements, which contains <img src="https://latex.codecogs.com/png.latex?a">, and let <img src="https://latex.codecogs.com/png.latex?%5COmega_N%20%5Cto%20%5COmega"></p>
+<p><img src="https://latex.codecogs.com/png.latex?P(X=a)%20=%20%5Clim_%7BN%20%5Cto%20%5Cinfty%7D%20%5Cfrac%7B1%7D%7BN%7D%20=%200."></p>
+<p>If the subsets <img src="https://latex.codecogs.com/png.latex?%5COmega_N"> do not contain a, e.g.&nbsp;choosing <img src="https://latex.codecogs.com/png.latex?a=1.1">, the probability is trivial as</p>
+<p><img src="https://latex.codecogs.com/png.latex?P(X=a)%20=%20%5Clim_%7BN%20%5Cto%20%5Cinfty%7D%20%5Cfrac%7B0%7D%7BN%7D%20=%200."></p>
+<p>So here we have two possibilities for drawing a random variable <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5COmega"> which both have zero probability - are they both impossible?</p>
+</section>
+</section>
+<section id="impossibility" class="level1">
+<h1>Impossibility</h1>
+<p>There is only one way for the event space <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> to be impossible. That is for at least one event in <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D"> to not be in <img src="https://latex.codecogs.com/png.latex?%5COmega">.</p>
+<p>For example, throwing a six-sided dice and getting 7 is impossible, which would have zero probability and is impossible.</p>
+<p>However, a fully reasonable outcome with zero probability is not impossible, but rather <em>improbable</em>. Drawing <img src="https://latex.codecogs.com/png.latex?a=0.5"> from the real interval <img src="https://latex.codecogs.com/png.latex?%5B0,%201%5D"> under uniform probabilities is perferctly reasonable, but extremely improbable considering the infinite number of possible draws. However, drawing <img src="https://latex.codecogs.com/png.latex?a=1.1"> is impossible, similar to the discrete dice above.</p>
+<p>Therefore, an event with zero probability does not imply impossibility. However, the reverse is true - an impossible event has zero probability.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>www.kristjanrox.com/articles/04_zero_probability/zero_prob_v2.html</guid>
+  <pubDate>Sun, 04 Jan 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Relative efficiency - a la Sadi Carnot</title>
   <dc:creator>Röx </dc:creator>

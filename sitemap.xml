@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>www.kristjanrox.com/articles/02_newton_2nd_law/newton_2nd_law.html</loc>
-    <lastmod>2026-01-02T14:01:22.404Z</lastmod>
+    <lastmod>2026-01-02T21:44:41.898Z</lastmod>
   </url>
   <url>
-    <loc>www.kristjanrox.com/index.html</loc>
-    <lastmod>2026-01-02T14:01:22.407Z</lastmod>
-  </url>
-  <url>
-    <loc>www.kristjanrox.com/about.html</loc>
-    <lastmod>2026-01-02T14:01:22.399Z</lastmod>
+    <loc>www.kristjanrox.com/articles/04_zero_probability/zero_prob_v2.html</loc>
+    <lastmod>2026-01-02T21:44:41.899Z</lastmod>
   </url>
   <url>
     <loc>www.kristjanrox.com/articles/01_monty_hall/monty_hall.html</loc>
-    <lastmod>2026-01-02T14:01:22.402Z</lastmod>
+    <lastmod>2026-01-02T21:44:41.895Z</lastmod>
+  </url>
+  <url>
+    <loc>www.kristjanrox.com/about.html</loc>
+    <lastmod>2026-01-02T21:44:41.892Z</lastmod>
+  </url>
+  <url>
+    <loc>www.kristjanrox.com/index.html</loc>
+    <lastmod>2026-01-02T21:44:41.901Z</lastmod>
   </url>
   <url>
     <loc>www.kristjanrox.com/articles/03_sadi_carnot/sadi_carnot.html</loc>
-    <lastmod>2026-01-02T14:01:22.405Z</lastmod>
+    <lastmod>2026-01-02T21:44:41.899Z</lastmod>
   </url>
 </urlset>

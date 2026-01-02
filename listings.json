@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/04_zero_probability/zero_prob_v2.html",
       "/articles/03_sadi_carnot/sadi_carnot.html",
       "/articles/02_newton_2nd_law/newton_2nd_law.html",
       "/articles/01_monty_hall/monty_hall.html"
