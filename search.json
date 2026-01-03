@@ -81,7 +81,7 @@
     "href": "articles/04_zero_probability/zero_prob_v2.html#conclusion",
     "title": "Does zero probability imply impossibility?",
     "section": "Conclusion",
-    "text": "Conclusion\nGiven the preceeding informal discussion, we can argue that an event with zero probability does not have to be impossible - but an impossible event will have zero probability."
+    "text": "Conclusion\nGiven the preceeding informal discussion, we can argue that an event with zero probability does not have to be impossible - but an impossible event will have zero probability.\nA value of \\(P=0\\) for a possible event should be read as improbable not impossible."
   },
   {
     "objectID": "articles/04_zero_probability/zero_prob_v2.html#discrete-random-variables",

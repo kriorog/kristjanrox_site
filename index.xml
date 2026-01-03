@@ -62,6 +62,7 @@
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>Given the preceeding informal discussion, we can argue that an event with zero probability does not have to be impossible - but an impossible event will have zero probability.</p>
+<p>A value of <img src="https://latex.codecogs.com/png.latex?P=0"> for a possible event should be read as <em>improbable</em> not <em>impossible</em>.</p>
 </section>
 </section>
 <section id="a-more-formal-approach---using-probability-spaces" class="level1">
