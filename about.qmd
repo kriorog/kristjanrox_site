@@ -10,8 +10,8 @@ about:
     - icon: linkedin
       text: LinkdeIn
       href: https://www.linkedin.com/in/kristjanrox/
-    - icon: envelope
-      href: mailto:kriorog@gmail.com
+    # - icon: envelope
+    #  href: mailto:kriorog@gmail.com
       
 format:
   html:
@@ -24,6 +24,6 @@ I am an aerospace engineer, pilot, and applied mathematician.
 
 I'll be publishing [articles](index.qmd) related to various topics of interest.
 
-Feel free to [get in touch by email](mailto:kristjan@eremreykjavik.com) or via [LinkedIn](https://www.linkedin.com/in/kristjanrox).
+Please follow me on [LinkedIn](https://www.linkedin.com/in/kristjanrox) and get in touch by dm.
 
 /Röx

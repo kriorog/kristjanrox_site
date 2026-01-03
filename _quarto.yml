@@ -24,8 +24,8 @@ website:
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/kristjanrox/
-      - icon: envelope
-        href: mailto:kriorog@eremreykjavik.com
+      # - icon: envelope
+      #  href: mailto:kriorog@eremreykjavik.com
       - icon: rss
         href: index.xml
 
