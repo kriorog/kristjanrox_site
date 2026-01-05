@@ -35,6 +35,12 @@
 <li>The host then gives you the option to switch your choice to the remaining unopened door (Door 2) or stick with your original choice (Door 1).</li>
 </ol>
 <p>What should you do to maximize your chances of winning the car?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="www.kristjanrox.com/articles/01_monty_hall/01_part 1/figures/Monty_open_door.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><em>The setup of the game after Monty reveals a goat</em></figcaption>
+</figure>
+</div>
 <p>The immediate intuition might suggest that after Monty offers us the switch, we now only have two doors to choose from, with each being equally likely, i.e.&nbsp;the odds being 50/50. So it does not matter whether we switch or stay. However, this is not the case.</p>
 <p>Vos Savant’s solutions was that you should <em>always</em> switch doors.</p>
 <p>Why? By switching, you have a 2/3 chance of winning the car, while if you stick with your original choice, you only have a 1/3 chance. However, this solution is dependent on the exact problem statement given. If the problem statement is changed, in particular the host’s behavior, the solution may also change.</p>
