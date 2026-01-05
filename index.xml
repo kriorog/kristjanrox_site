@@ -78,7 +78,7 @@
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
 <p>Given the preceeding informal discussion, we can argue that an event with zero probability does not have to be impossible - but an impossible event will have zero probability. Impossible events are those which are not in our outcome set <img src="https://latex.codecogs.com/png.latex?%5COmega"> for a random process.</p>
-<p>A value of <img src="https://latex.codecogs.com/png.latex?P=0"> for a possible event should be read as <em>improbable</em> not <em>impossible</em>.</p>
+<p>Instead, a value of <img src="https://latex.codecogs.com/png.latex?P=0"> for an event in the set of possible outcomes should be read as <em>improbable</em> not <em>impossible</em>.</p>
 
 
 </section>
