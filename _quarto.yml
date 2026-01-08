@@ -6,7 +6,7 @@ website:
   site-url: "www.kristjanrox.com"
   description: "Röx website"
   favicon: "figures/rox_logo_transparent.png"
-  draft-mode: gone
+  draft-mode: unlinked
   
   page-footer: 
     left: "Copyright Kristjan Röx. All rights reserved."
