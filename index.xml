@@ -107,7 +107,7 @@
 </ul>
 <p>Our problem now is evaluating the desired posterior <img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%20Y_j,%20Z_k)"> for all possible <img src="https://latex.codecogs.com/png.latex?(i,j,k)">. We have 3 options for each index, so there are <img src="https://latex.codecogs.com/png.latex?3%5E3%20=%2027"> possible combinations. Some of these will not be valid, some will.</p>
 <p>For this case it is better to write a short script to calculate all outcomes. We are interested in investigating posterior probability outcomes <img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%C2%A0Y_j,%20Z_k)"> where <img src="https://latex.codecogs.com/png.latex?i=j">, which is the probability of winning by not switching, and where <img src="https://latex.codecogs.com/png.latex?i%20%5Cneq%20j"> which is the probability of winning by switching.</p>
-<p>Please run the following code block by pressing <strong>Run Code</strong> to see the outcome. You can reset the code block by pressing <strong>Start Over</strong>.</p>
+<p>Please run the following code block by pressing <strong>Run Code</strong> to see the outcome. You can reset the code block by pressing <strong>Start Over</strong>. The calculation results will appear below the code block.</p>
 <div id="f07b79db" class="cell">
 <div>
 <div id="pyodide-1" class="exercise-cell">
@@ -119,14 +119,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 </div>
 </div>
 <p>The posterior is <img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%C2%A0Y_j,%20Z_k)"> - so we should interpret the case where <img src="https://latex.codecogs.com/png.latex?i=j"> as the <em>probability of the car being behind the door initially chosen by the contestant, given that Monty opened door <img src="https://latex.codecogs.com/png.latex?k"></em>. In other words, the probability of winning by staying with the chosen door.</p>
-<p>In this case, the calculations show the posterior being <img src="https://latex.codecogs.com/png.latex?33.3%5C%25">, i.e.&nbsp;</p>
+<section id="result-for-case-ij-i.e.-contestant-initially-chose-correct-door" class="level2">
+<h2 class="anchored" data-anchor-id="result-for-case-ij-i.e.-contestant-initially-chose-correct-door">Result for case <img src="https://latex.codecogs.com/png.latex?i=j">, i.e.&nbsp;contestant initially chose correct door</h2>
+<p>In this case, the calculations show the posterior being <img src="https://latex.codecogs.com/png.latex?33.3%5C%25">, or</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AP(X_i%20%7C%20Y_j,%20Z_k)%20=%201/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i=j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cnotin%20%5C%7Bi,j%5C%7D.%0A"></p>
 <p>This means that the posterior probability of the car <strong>not</strong> being behind the chosen door is <img src="https://latex.codecogs.com/png.latex?%0AP(%5Cneg%20X_i%20%7C%20Y_j,%20Z_k)%20=%201-%20P(X_i%20%7C%20Y_j,%20Z_k)%20=%202/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i=j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cnotin%20%5C%7Bi,%20j%5C%7D.%0A"></p>
 <p>Which means, we should switch to the other door.</p>
-<p>For the other case, where we did not initially choose the correct door, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?i%20%5Cneq%20j"> we have a success rate of <img src="https://latex.codecogs.com/png.latex?66.7%5C%25"> by switching, or</p>
+</section>
+<section id="result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door" class="level2">
+<h2 class="anchored" data-anchor-id="result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door">Result for case <img src="https://latex.codecogs.com/png.latex?i%20%5Cneq%20j">, i.e.&nbsp;contestant initially chose wrong door</h2>
+<p>For the other case, our posterior <img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%C2%A0Y_j,%20Z_k)"> for <img src="https://latex.codecogs.com/png.latex?i%20%5Cneq%20j"> is interpreted as <em>the probability of the car being behind door <img src="https://latex.codecogs.com/png.latex?i"> given that the contestant initially chose a different door <img src="https://latex.codecogs.com/png.latex?j">, and Monty openend door <img src="https://latex.codecogs.com/png.latex?k"></em>. In simpler terms, the probability of the car being behind the other remaining door.</p>
+<p>The calculations yield a probability of <img src="https://latex.codecogs.com/png.latex?66.7%25"> of the car being behind the other door, i.e.</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AP(X_i%20%7C%20Y_j,%20Z_k)%20=%202/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i%20%5Cneq%20j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cnotin%20%5C%7Bi,j%5C%7D.%0A"></p>
 <p>By the same logic as above, for this case, the probability of winning by staying is <img src="https://latex.codecogs.com/png.latex?%0AP(%5Cneg%20X_i%20%7C%20Y_j,%20Z_k)%20=%201-%20P(X_i%20%7C%20Y_j,%20Z_k)%20=%201/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i%20%5Cneq%20j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cin%20%5C%7Bi,%20j%5C%7D.%0A"></p>
+<p>So we should also switch to the other door.</p>
 <p>Therefore, we have shown, for all possible cases, the probability of winning being higher by switching to the other door.</p>
+</section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
