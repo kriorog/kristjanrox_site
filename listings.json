@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/articles/01_monty_hall/01_part 1/monty_hall.html"
+      "/articles/01_monty_hall/02_part_2/monty_hall_2.html",
+      "/articles/01_monty_hall/01_part_1/monty_hall.html"
     ]
   }
 ]

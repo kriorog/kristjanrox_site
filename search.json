@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "",
+    "objectID": "articles/01_monty_hall/02_part_2/monty_hall_2.html",
+    "href": "articles/01_monty_hall/02_part_2/monty_hall_2.html",
+    "title": "The Monty Hall Problem - Part 2",
     "section": "",
-    "text": "The Monty Hall Problem\n\n\n\nprobability theory\n\nmonty hall\n\nsimulation\n\n\n\n\n\n\n\nRöx\n\n\nJan 4, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "In Part 1, the solution to the Monty Hall problem required a certain level of intuition to be accepted. The fact that the prior 2/3 probability of choosing the wrong door being fully transferred to the other door that Monty did not open may not be immediately obvious. Therefore, the reasoning provided is not complete.\nI prefer to let the mathematics - the language of logic and reason - yield a justified solution, without needing to accept a solution based on intuition.\nI will utilize the dependent nature of both Monty’s choices and the choice the contestant has to make after being offered the choice of switching or staying. This dependency between variables indicates the probabilities being conditional probabilities, which are conditional on what information one has at the time of making a choice. For example, Monty chooses his door based on where the car is (which he knows) and what door the contestant chooses. Given this information, the probability that Monty will choose each door is not equal, and may be biased to one or more doors. Similarly, the contestant will have to make a choice on whether to switch based on his initially chosen door and the door that Monty opened."
+  },
+  {
+    "objectID": "articles/01_monty_hall/02_part_2/monty_hall_2.html#how-to-interpret-the-conditional-probabilities",
+    "href": "articles/01_monty_hall/02_part_2/monty_hall_2.html#how-to-interpret-the-conditional-probabilities",
+    "title": "The Monty Hall Problem - Part 2",
+    "section": "How to interpret the conditional probabilities?",
+    "text": "How to interpret the conditional probabilities?\nGiven the information in the problem, deducing the desired probability \\(P(X | Y, Z)\\) by inspection is difficult. It is what we are trying to justify by intuition in Part 1 on this problem as being 2/3 in favour of switching."
+  },
+  {
+    "objectID": "articles/01_monty_hall/02_part_2/monty_hall_2.html#bayes-law-applied-to-the-problem",
+    "href": "articles/01_monty_hall/02_part_2/monty_hall_2.html#bayes-law-applied-to-the-problem",
+    "title": "The Monty Hall Problem - Part 2",
+    "section": "Bayes’ Law applied to the problem",
+    "text": "Bayes’ Law applied to the problem\nNote that Bayes’ Law considers one conditional event on each side of the equation.\nTherefore, for \\(P(Z_k | X_i, Y_j)\\) to be analogous to the Bayes’ \\(P(B | A)\\), we need to interpret the conditional event as being \\(B = (X_i, Y_j)\\) i.e. the event of obtaining the values \\(X_i\\) and \\(Y_j\\) for each door pair \\((i,j)\\) in the same run of the game.\nHowever, we have established that \\(X_i\\) and \\(Y_j\\) are independent events for all pairs \\((i,j)\\). Therefore, the probability of \\(P(X_i, Y_j) = P(X_i)P(Y_j)\\). We have the prior probabilities of both \\(X\\) and \\(Y\\) as being \\(P(X_i)=P(Y_j)=1/3\\) for all \\(i\\) and \\(j\\).\nFor our desired probability \\(P(X_i | Y_j, Z_k)\\) we need the probability of the event \\(A = (Y_j, Z_k)\\) i.e. the combined event of observing values \\(Y_j\\) and \\(Z_k\\) in each run of the game. These are dependent events. We know that Monty’s choice \\(Z_k\\) is dependent on both \\(X_i\\) (where the car is) and \\(Y_j\\) (door chosen by contestant) and we can model \\(P(Z_k | X_i, Y_j)\\) based on that.\nWith this, we can determine the required prior \\(P(Y_j, Z_k)\\) using the Total Law of Probability\n\\[\n\\begin{align}\n    P(A)    &= P(Y_j, Z_k) \\\\\n            &= P(Z_k | X_i, Y_j)P(X_i, Y_j) \\\\\n            &= \\sum_{i \\in \\{1,2,3\\}} P(Z_k | X_i, Y_j)P(X_i)P(Y_j).\n\\end{align}\n\\]\nWe have now demonstrated our ability to construct all of the required elements in Bayes’ Law for its application to the Monty Hall problem."
   },
   {
     "objectID": "about.html",
@@ -14,29 +28,36 @@
     "text": "Welcome to my website.\nI am an aerospace engineer, pilot, and applied mathematician.\nI’ll be publishing articles related to various topics of interest.\nPlease follow me on LinkedIn and get in touch by dm.\n/Röx"
   },
   {
-    "objectID": "articles/01_monty_hall/01_part 1/monty_hall.html",
-    "href": "articles/01_monty_hall/01_part 1/monty_hall.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "The Monty Hall Problem - Part 2\n\n\n\nprobability theory\n\nmonty hall\n\nBayes' Law\n\n\n\n\n\n\n\nRöx\n\n\nJan 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Monty Hall Problem\n\n\n\nprobability theory\n\nmonty hall\n\nsimulation\n\n\n\n\n\n\n\nRöx\n\n\nJan 4, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "articles/01_monty_hall/01_part_1/monty_hall.html",
+    "href": "articles/01_monty_hall/01_part_1/monty_hall.html",
     "title": "The Monty Hall Problem",
     "section": "",
     "text": "The Monty Hall Problem is a famous probability brainteaser based on a game show scenario. It is named after Monty Hall, the original host of the television game show “Let’s Make a Deal.” The problem is known for its counterintuitive solution, which often surprises people - and still sparks debate among statisticians and enthusiasts alike.\nThe problem was first posed by Steve Selvin in a letter to the journal “The American Statistician” in 1975. It gained widespread attention after being featured in Marilyn vos Savant’s “Ask Marilyn” column in Parade magazine in 1990.\nMarilyn’s response sparked a significant public debate, as many readers found disagreed with her solution and explanation. The Monty Hall Problem has since become a classic example in probability theory and is often used to illustrate the importance of considering all available information when making decisions, and who exactly is privy to that information.\nWe’ll explore the problem, its solution, and the reasoning behind it."
   },
   {
-    "objectID": "articles/01_monty_hall/01_part 1/monty_hall.html#its-all-about-what-information-is-known",
-    "href": "articles/01_monty_hall/01_part 1/monty_hall.html#its-all-about-what-information-is-known",
+    "objectID": "articles/01_monty_hall/01_part_1/monty_hall.html#its-all-about-what-information-is-known",
+    "href": "articles/01_monty_hall/01_part_1/monty_hall.html#its-all-about-what-information-is-known",
     "title": "The Monty Hall Problem",
     "section": "It’s all about what information is known",
     "text": "It’s all about what information is known\nThe fundamentals of stochastic problems are directly related to what information is known and by whom.\nA common assumption in stochastic processes is that different events are Independent and Identically Distributed (i.i.d). This means that one event does not affect any subsequent events, and they are drawn from the same probability distribution. If a subsequent event is dependent on the outcome of a previous event, we’d have to look at conditional probabilites given the outcome of the first event.\nIn the beginning, we have three doors, and the probability of the car being behind any door is 1/3. When you pick a door, you have a 1/3 chance of having picked the car and a 2/3 chance of having picked a goat. We do not know where the car is, and do not have any other information at this time to help us make a better choice. The probabilities are uniformly distributed between all options.\nHowever, after we make our initial choice, the host’s action is not random - it’s deterministic and dependent our chosen door and where the car is (which he knows).\n\nTherein lies the key to understanding the problem\nThe host knows where the car is and once we choose a door, he will always open a door that has a goat behind it. This biased action provides us with new information that changes the probabilities. We can reinforce this understanding by considering the following:\n\nThe host will never open the door you initially picked.\nThe host knows where the car is and will always open a door with a goat behind it.\n\nOut of the two doors we did not choose, the host’s choice between those two doors provides valuable information to our problem which is not random, and thus allows us to update our probabilities for the remaining two unopened doors.\nHowever, had the host opened a door at random, even possibly the one we initially picked, the probabilities would remain 50/50 between the two remaining doors, as no new information would have been provided that allows us to updated our probabilities from the initial uniform probabilities. In other words, the host’s choices would be Independent and Identically Distributed as our choice of door to open."
   },
   {
-    "objectID": "articles/01_monty_hall/01_part 1/monty_hall.html#the-solution",
-    "href": "articles/01_monty_hall/01_part 1/monty_hall.html#the-solution",
+    "objectID": "articles/01_monty_hall/01_part_1/monty_hall.html#the-solution",
+    "href": "articles/01_monty_hall/01_part_1/monty_hall.html#the-solution",
     "title": "The Monty Hall Problem",
     "section": "The solution",
     "text": "The solution\nSo, here is the full solution.\nWe have gone over the probabilities at the initial choice of door by the contestant, the one chosen has probability \\(p=1/3\\) of having the car, the other two doors have a combined probability of \\(1-p=2/3\\) of having the car. The probabilities add up to 1 since there is only one car and one door must be opened - i.e. something will happen, either a car is revealed or not.\nAlthough there is 2/3 probability of the car being behind either of the other two doors, we don’t know which one out of those two to pick. We need more information to make a better choice.\nHowever, the host’s knowledge and actions will help us with this problem. Since the host will only choose a door out of the two unchosen doors, and will never open the door with the car - should it be behind either of them - the other door he did not choose becomes more valuable to us, since the full 2/3 probability of the car being behind either of the two unchosen doors now tranfers fully to the door not chosen by the host. We now don’t have to choose between the other two doors, the host has eliminated one for us free of charge. This is called variable change - i.e the actions by the host changes the variables of our problem.\nThere is a famous classroom scene in the movie “21” from 2008 where this is explained quite well (see below). There is also a great numberphile video explaining the problem and solution in detail.\nHere is the scene from 21:\n\n\nHere is the numberphile video:\n\n\nThe scene from 21 is also of interest from the other topic discussed, namely Newton’s method - or Newton-Raphson method - for finding roots of functions and the possible issues with that method. This is a topic for another time though."
   },
   {
-    "objectID": "articles/01_monty_hall/01_part 1/monty_hall.html#different-host-behavior",
-    "href": "articles/01_monty_hall/01_part 1/monty_hall.html#different-host-behavior",
+    "objectID": "articles/01_monty_hall/01_part_1/monty_hall.html#different-host-behavior",
+    "href": "articles/01_monty_hall/01_part_1/monty_hall.html#different-host-behavior",
     "title": "The Monty Hall Problem",
     "section": "Different host behavior",
     "text": "Different host behavior\nIt is important to note that the solution to the Monty Hall Problem is dependent on the host’s behavior. If the host’s actions were different, the probabilities and optimal strategy could change. For example, if the host were to open a door at random, without knowledge of what is behind the doors, the probabilities would indeed be 50/50 between the two remaining doors after one is opened, and switching or staying would not matter. In other words, such behaviour by the host would not provide any additional information to the contestant.\nWe can look at various different host behaviors and see how they affect the solution:\n\nHost always opens a door with a goat (standard Monty Hall Problem): The optimal strategy is to always switch, giving a 2/3 chance of winning the car.\nHost opens a door at random: It does not matter if you stick with your first choice or change to the other remaining door, as the probabilities are 50/50 between the two remaining doors.\nHost only opens a door if the contestant initially picked the car: In this case, the optimal strategy is to always stick with the original choice, as switching would lead to a guaranteed loss.\nHost opens a door only if the contestant initially picked a goat: Here, the optimal strategy is to always switch, as switching would lead to a guaranteed win.\n\nThese variations illustrate how the host’s behavior can significantly impact the probabilities and optimal strategies in the Monty Hall Problem."
