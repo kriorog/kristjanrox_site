@@ -1,2 +1,850 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"></html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Röx">
+<meta name="dcterms.date" content="2026-01-13">
+
+<title>The Monty Hall Problem - Part 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../figures/rox_logo_transparent.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-963f981c4b4d25aa32c348162c3c6f0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2EKD2JNKMF"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2EKD2JNKMF', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script type="module" src="../../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<meta name="quarto:status" content="draft">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../figures/rox_logo_transparent.png" alt="" class="navbar-logo light-content">
+    <img src="../../../figures/rox_logo_transparent.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/kristjanrox/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#conditional-probabilities" id="toc-conditional-probabilities" class="nav-link active" data-scroll-target="#conditional-probabilities">Conditional probabilities</a>
+  <ul class="collapse">
+  <li><a href="#how-to-interpret-the-conditional-probabilities" id="toc-how-to-interpret-the-conditional-probabilities" class="nav-link" data-scroll-target="#how-to-interpret-the-conditional-probabilities">How to interpret the conditional probabilities?</a></li>
+  </ul></li>
+  <li><a href="#inspection-of-each-variable-in-the-problem" id="toc-inspection-of-each-variable-in-the-problem" class="nav-link" data-scroll-target="#inspection-of-each-variable-in-the-problem">Inspection of each variable in the problem</a></li>
+  <li><a href="#the-key-to-the-solution---bayes-law" id="toc-the-key-to-the-solution---bayes-law" class="nav-link" data-scroll-target="#the-key-to-the-solution---bayes-law">The key to the solution - Bayes’ Law</a>
+  <ul class="collapse">
+  <li><a href="#bayes-law-applied-to-the-problem" id="toc-bayes-law-applied-to-the-problem" class="nav-link" data-scroll-target="#bayes-law-applied-to-the-problem">Bayes’ Law applied to the problem</a></li>
+  </ul></li>
+  <li><a href="#bayesian-solution" id="toc-bayesian-solution" class="nav-link" data-scroll-target="#bayesian-solution">Bayesian solution</a>
+  <ul class="collapse">
+  <li><a href="#result-for-case-ij-i.e.-contestant-initially-chose-correct-door" id="toc-result-for-case-ij-i.e.-contestant-initially-chose-correct-door" class="nav-link" data-scroll-target="#result-for-case-ij-i.e.-contestant-initially-chose-correct-door">Result for case <span class="math inline">\(i=j\)</span>, i.e.&nbsp;contestant initially chose correct door</a></li>
+  <li><a href="#result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door" id="toc-result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door" class="nav-link" data-scroll-target="#result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door">Result for case <span class="math inline">\(i \neq j\)</span>, i.e.&nbsp;contestant initially chose wrong door</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Monty Hall Problem - Part 2</h1>
+<p class="subtitle lead">A mathematical approach to a solution</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">probability theory</div>
+    <div class="quarto-category">monty hall</div>
+    <div class="quarto-category">Bayes' Law</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Röx </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 13, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a>, the solution to the Monty Hall problem required a certain level of intuition to be accepted. The fact that the prior 2/3 probability of choosing the wrong door being fully transferred to the other door that Monty did not open may not be immediately obvious. Therefore, the reasoning provided is not complete.</p>
+<p>I prefer to let the mathematics - the language of logic and reason - yield a justified solution, without needing to accept a solution based on intuition.</p>
+<p>I will utilize the dependent nature of both Monty’s choices and the choice the contestant has to make after being offered the choice of switching or staying. This dependency between variables indicates the probabilities being <em>conditional probabilities</em>, which are conditional on what information one has at the time of making a choice. For example, Monty chooses his door based on where the car is (which he knows) and what door the contestant chooses. Given this information, the probability that Monty will choose each door is not equal, and may be biased to one or more doors. Similarly, the contestant will have to make a choice on whether to switch based on his initially chosen door and the door that Monty opened.</p>
+<section id="conditional-probabilities" class="level1">
+<h1>Conditional probabilities</h1>
+<p>Let’s begin by defining some variables for our problem.</p>
+<p>Let <span class="math inline">\(X\)</span> describe the door hiding the car, <span class="math inline">\(Y\)</span> be the door chosen by the contestant, and <span class="math inline">\(Z\)</span> the door opened by Monty.</p>
+<p>Based on the structure and mechanics of the problem, one can see the following:</p>
+<ul>
+<li><p>We assume no bias in the location of the car behind door <span class="math inline">\(X\)</span>.</p></li>
+<li><p>When Monty chooses his door <span class="math inline">\(Z\)</span> he knows the values of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>The contestant initially chooses <span class="math inline">\(Y\)</span> at random, as he has no other information at that stage.</p></li>
+<li><p>When offered the switch, the contestant strategy would be to choose the door with the highest probability of hiding the car - given the initially chosen <span class="math inline">\(X\)</span> and the door <span class="math inline">\(Y\)</span> opened by Monty.</p></li>
+<li><p>In mathematical terms, the door <span class="math inline">\(X\)</span> with the highest conditional probability <span class="math inline">\(P(X | Y, Z)\)</span>, which should be read as “<em>the probability of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span></em>”. This is a <em>conditional probability</em> as it is dependent on known values of <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span>.</p></li>
+</ul>
+<section id="how-to-interpret-the-conditional-probabilities" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-interpret-the-conditional-probabilities">How to interpret the conditional probabilities?</h2>
+<p>Given the information in the problem, deducing the desired probability <span class="math inline">\(P(X |&nbsp;Y, Z)\)</span> by inspection is difficult. It is what we are trying to justify by intuition in <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a> on this problem as being 2/3 in favour of switching.</p>
+</section>
+</section>
+<section id="inspection-of-each-variable-in-the-problem" class="level1">
+<h1>Inspection of each variable in the problem</h1>
+<p>We can however see that the contestant chooses his initial door at random, i.e.&nbsp;each is equally likely to be chosen. Therefore we can reasonably assume the contestant choosing a door at random, i.e.&nbsp;<span class="math inline">\(P(Y_j)=1/3\)</span> for each door <span class="math inline">\(j\in\{1,2,3\}\)</span>.</p>
+<p>Also, the car’s location is not dependent on anything. We can thus assume it being placed behind a door at random, i.e.&nbsp;<span class="math inline">\(P(X_i)=1/3\)</span> for each <span class="math inline">\(i \in \{1,2,3\}\)</span>.</p>
+<p>Therefore, the variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent random variables.</p>
+<p>However, Monty’s chosen door <span class="math inline">\(Z\)</span> is dependent on <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Therefore, we can’t model <span class="math inline">\(P(Z_k)\)</span> for each <span class="math inline">\(k \in \{1,2,3\}\)</span> based on the structure and mechanics of the problem. However, we can model the conditional probability of what Monty does, given where the car is and what door the contestant initially chooses. Therefore, we can model <span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> for various combinations <span class="math inline">\((i,j,k)\)</span>.</p>
+</section>
+<section id="the-key-to-the-solution---bayes-law" class="level1">
+<h1>The key to the solution - Bayes’ Law</h1>
+<p>Note that none of the probabilities we could model based on the problem are the one we need, i.e.&nbsp;<span class="math inline">\(P(X_i | Y_j, Z_k)\)</span>. However, we can relate this desired conditional probability with the one conditional probability we could model, i.e.&nbsp;<span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> using Bayes’ Law.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Bayes' Law">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Bayes’ Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be different events and that <span class="math inline">\(P(B) \neq 0\)</span>, then</p>
+<p><span class="math display">\[
+P(A | B) = \frac{P(B | A)P(A)}{P(B)},
+\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(P(A |&nbsp;B)\)</span> is the conditional probability of event <span class="math inline">\(A\)</span> given that <span class="math inline">\(B\)</span> is true. This probability is also called the <em>posterior probability</em> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>.</p></li>
+<li><p><span class="math inline">\(P(B | A)\)</span> is the conditional probability of event <span class="math inline">\(B\)</span> occuring given that <span class="math inline">\(A\)</span> is true. It is also called the <em>likelihood</em> of event <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> in the <a href="https://en.wikipedia.org/wiki/Bayesian_probability">Bayesian interpretation of probabilities</a>.</p></li>
+<li><p><span class="math inline">\(P(A)\)</span> and <span class="math inline">\(P(B)\)</span> are the probabilities of independently observing events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. These are also known as <em>prior probabilities</em> of events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively.</p></li>
+</ul>
+</div>
+</div>
+<p>The premise of Bayesian probabilities is the notion that models of proabilities for a specific process or problem are in themselves predictions subject to likelihoods. Given certain observations, one aims to find the model with maximum likelihood of having produced the observed events.</p>
+<p>Bayes’ Law can therefore be interpreted as relating the model’s likelihood given observed events, to the probability of observing the events given the model.</p>
+<p>In our case, the <em>probability model</em> are the conditional probabilities <span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> for all <span class="math inline">\((i,j,k)\)</span> we deduced from the structure and mechanics of the problem, and would be analogous to <span class="math inline">\(P(B | A)\)</span> in the above definition of Bayes’ Law. We should rather refer to <span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> as being the <em>likelihood</em> of observing <span class="math inline">\(Z_k\)</span> given <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_j\)</span>.</p>
+<p>The posterior probability is the one we are interested in, i.e.&nbsp;<span class="math inline">\(P(X_i | Y_j, Z_k)\)</span> which would be analogous to <span class="math inline">\(P(A | B)\)</span> in Bayes’ Law.</p>
+<p>Therefore, we can infer our desired conditional probability based on our likelihood model and the prior probabilities.</p>
+<section id="bayes-law-applied-to-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="bayes-law-applied-to-the-problem">Bayes’ Law applied to the problem</h2>
+<p>Note that Bayes’ Law considers one conditional event on each side of the equation.</p>
+<p>Therefore, for <span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> to be analogous to the Bayes’ <span class="math inline">\(P(B | A)\)</span>, we need to interpret the conditional event as being <span class="math inline">\(B = (X_i, Y_j)\)</span> i.e.&nbsp;the event of obtaining the values <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_j\)</span> for each door pair <span class="math inline">\((i,j)\)</span> in the same run of the game.</p>
+<p>However, we have established that <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_j\)</span> are <em>independent</em> events for all pairs <span class="math inline">\((i,j)\)</span>. Therefore, the probability of <span class="math inline">\(P(X_i, Y_j) = P(X_i)P(Y_j)\)</span>. We have the prior probabilities of both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> as being <span class="math inline">\(P(X_i)=P(Y_j)=1/3\)</span> for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</p>
+<p>For our desired probability <span class="math inline">\(P(X_i | Y_j, Z_k)\)</span> we need the probability of the event <span class="math inline">\(A = (Y_j, Z_k)\)</span> i.e.&nbsp;the combined event of observing values <span class="math inline">\(Y_j\)</span> and <span class="math inline">\(Z_k\)</span> in each run of the game. These are dependent events. We know that Monty’s choice <span class="math inline">\(Z_k\)</span> is dependent on both <span class="math inline">\(X_i\)</span> (where the car is) and <span class="math inline">\(Y_j\)</span> (door chosen by contestant) and we can model <span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> based on that.</p>
+<p>With this, we can determine the required prior <span class="math inline">\(P(Y_j, Z_k)\)</span>. First, using the <a href="https://en.wikipedia.org/wiki/Conditional_probability">definition of conditional probability</a>, we can write</p>
+<p><span class="math display">\[
+P(Y_j, Z_k) = P(Y_j \cap Z_k) = P(Z_k | Y_j)P(Y_j).
+\]</span></p>
+<p>Then, using the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Total Law of Probability</a> on <span class="math inline">\(P(Z_k | Y_j)\)</span>, we obtain for a given <span class="math inline">\(j\)</span> and <span class="math inline">\(k\)</span></p>
+<p><span class="math display">\[
+\begin{align}
+    P(Y_j, Z_k) &amp;= P(Z_k | Y_j)P(Y_j) \\
+                &amp;= \left( \sum_{i \in \{1,2,3\}} P(Z_k | X_i, Y_j)P(X_i) \right) P(Y_j) \\
+                &amp;= P(Y_j)\sum_{i \in \{1,2,3\}} P(Z_k | X_i, Y_j)P(X_i).
+\end{align}
+\]</span></p>
+<p>We have now demonstrated our ability to construct all of the required elements in Bayes’ Law for its application to the Monty Hall problem.</p>
+</section>
+</section>
+<section id="bayesian-solution" class="level1">
+<h1>Bayesian solution</h1>
+<p>Bayes’ Law in our case is</p>
+<p><span class="math display">\[
+\begin{align}
+    P(X_i | Y_j, Z_k)   &amp;= \frac{P(Z_k | X_i, Y_j)P(X_i, Y_j)}{P(Y_j, Z_j)} \\
+                        &amp;= \frac{P(Z_k | X_i, Y_j)P(X_i)P(Y_j)}{P(Y_j)\sum_{i \in \{1,2,3\}} P(Z_k | X_i, Y_j)P(X_i)}.
+\end{align}
+\]</span></p>
+<p>As the denominator <span class="math inline">\(P(Y_j, Z_j)\)</span> must be non-zero for the posterior to be defined - which it always is - as Monty always chooses a door.</p>
+<p>We also have the priors <span class="math inline">\(P(X_i)=P(Y_j)=1/3\)</span> for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</p>
+<p>To construct our model of the likelihood <span class="math inline">\(P(Z_k | X_i, Y_j)\)</span> we need to re-visit Monty’s behaviour in the game from <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a>.</p>
+<ul>
+<li><p>We know he never opens the door chosen by the contestant, i.e.&nbsp;<span class="math inline">\(Z_k \neq Y_i\)</span> for all door pairs <span class="math inline">\((i,k)\)</span>.</p></li>
+<li><p>We also know that Monty never opens the door with the car, i.e.&nbsp;<span class="math inline">\(Z_k \neq X_i\)</span> for all door pairs <span class="math inline">\((i,k)\)</span>.</p></li>
+<li><p>Since there are only three doors, the number of doors Monty can choose from for any given pair <span class="math inline">\((X_i, Y_j)\)</span> are either one or two.</p></li>
+<li><p>If the contestant initially chooses the correct door, i.e.&nbsp;<span class="math inline">\(X_i = Y_j\)</span>, then Monty has two doors to choose from. Since both of these do not hide the car, we can assume he chooses at random.</p>
+<p>Therefore,</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+    P(Z_k | X_i, Y_j) =
+        \begin{cases}
+            1/2     &amp; \text{ with } i=j, k \notin \{i,j\}, \\
+            0       &amp; \text{ with } i=j, k \in \{i, j\}.
+        \end{cases}
+\end{align}
+\]</span></p>
+<ul>
+<li><p>If the contestant chooses a wrong door, i.e.&nbsp;which does not hide the car, then Monty has only one door to choose from. Since he must open a door, he will always choose the only remaining door.</p>
+<p>Therefore, in this case <span class="math display">\[
+\begin{align}
+  P(Z_k | X_i, Y_j) =
+      \begin{cases}
+          1   &amp; \text{ with } i \neq j, k \notin \{i,j\}, \\
+          0   &amp; \text{ with } i \neq j, k \in \{i, j\}.
+      \end{cases}
+\end{align}
+\]</span></p></li>
+</ul>
+<p>Our problem now is evaluating the desired posterior <span class="math inline">\(P(X_i | Y_j, Z_k)\)</span> for all possible <span class="math inline">\((i,j,k)\)</span>. We have 3 options for each index, so there are <span class="math inline">\(3^3 = 27\)</span> possible combinations. Some of these will not be valid, some will.</p>
+<p>For this case it is better to write a short script to calculate all outcomes. We are interested in investigating posterior probability outcomes <span class="math inline">\(P(X_i |&nbsp;Y_j, Z_k)\)</span> where <span class="math inline">\(i=j\)</span>, which is the probability of winning by not switching, and where <span class="math inline">\(i \neq j\)</span> which is the probability of winning by switching.</p>
+<p>Please run the following code block by pressing <strong>Run Code</strong> to see the outcome. You can reset the code block by pressing <strong>Start Over</strong>. The calculation results will appear below the code block.</p>
+<div id="f07b79db" class="cell">
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZWYgY2FsY3VsYXRlX2Z1bGxfbW9udHlfaGFsbF9kZXRhaWxzKCk6XG4gICAgZG9vcnMgPSBbMSwgMiwgM11cbiAgICBjb21iaW5hdGlvbnMgPSBbXVxuICAgIFxuICAgICMgUHJpb3IgcHJvYmFiaWxpdGllczogUChYaSkgYW5kIFAoWWopIGFyZSBib3RoIDEvM1xuICAgIHBfeCA9IDEvM1xuICAgIHBfeSA9IDEvM1xuICAgIFxuICAgICMgR2VuZXJhdGUgYWxsIDI3IGNvbWJpbmF0aW9ucyAoMyBjaG9pY2VzIGZvciBYLCBZLCBhbmQgWilcbiAgICBmb3IgaSBpbiBkb29yczogICMgQ2FyIGRvb3IgWFxuICAgICAgICBmb3IgaiBpbiBkb29yczogICMgQ29udGVzdGFudCBkb29yIFlcbiAgICAgICAgICAgIGZvciBrIGluIGRvb3JzOiAgIyBNb250eSBkb29yIFpcbiAgICAgICAgICAgICAgICAjIExpa2VsaWhvb2QgUChaayB8IFhpLCBZailcbiAgICAgICAgICAgICAgICAjIE1vbnR5IGNhbm5vdCBvcGVuIHRoZSBjYXIgZG9vciAoayA9PSBpKSBcbiAgICAgICAgICAgICAgICAjIG9yIHRoZSBkb29yIHRoZSBjb250ZXN0YW50IGNob3NlIChrID09IGopXG4gICAgICAgICAgICAgICAgaWYgayA9PSBpIG9yIGsgPT0gajpcbiAgICAgICAgICAgICAgICAgICAgbGlrZWxpaG9vZCA9IDBcbiAgICAgICAgICAgICAgICBlbHNlOlxuICAgICAgICAgICAgICAgICAgICBpZiBpID09IGo6XG4gICAgICAgICAgICAgICAgICAgICAgICBsaWtlbGlob29kID0gMC41ICMgVHdvIGRvb3JzIGF2YWlsYWJsZVxuICAgICAgICAgICAgICAgICAgICBlbHNlOlxuICAgICAgICAgICAgICAgICAgICAgICAgbGlrZWxpaG9vZCA9IDEuMCAjIE9ubHkgb25lIGRvb3IgYXZhaWxhYmxlXG4gICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgIyBKb2ludCBQcm9iYWJpbGl0eSBQKFhpLCBZaiwgWmspID0gTGlrZWxpaG9vZCAqIFAoWGkpICogUChZailcbiAgICAgICAgICAgICAgICBqb2ludCA9IGxpa2VsaWhvb2QgKiBwX3ggKiBwX3lcbiAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICBjb21iaW5hdGlvbnMuYXBwZW5kKHtcbiAgICAgICAgICAgICAgICAgICAgJ0Nhcl9YJzogaSxcbiAgICAgICAgICAgICAgICAgICAgJ0NvbnRlc3RhbnRfWSc6IGosXG4gICAgICAgICAgICAgICAgICAgICdNb250eV9aJzogayxcbiAgICAgICAgICAgICAgICAgICAgJ0xpa2VsaWhvb2QnOiBsaWtlbGlob29kLFxuICAgICAgICAgICAgICAgICAgICAnSm9pbnQnOiBqb2ludFxuICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgXG4gICAgZGYgPSBwZC5EYXRhRnJhbWUoY29tYmluYXRpb25zKVxuICAgIFxuICAgICMgQ2FsY3VsYXRlIEV2aWRlbmNlIFAoWWosIFprKSB1c2luZyB0aGUgTGF3IG9mIFRvdGFsIFByb2JhYmlsaXR5XG4gICAgZXZpZGVuY2UgPSBkZi5ncm91cGJ5KFsnQ29udGVzdGFudF9ZJywgJ01vbnR5X1onXSlbJ0pvaW50J10uc3VtKCkucmVzZXRfaW5kZXgoKVxuICAgIGV2aWRlbmNlLmNvbHVtbnMgPSBbJ0NvbnRlc3RhbnRfWScsICdNb250eV9aJywgJ0V2aWRlbmNlJ11cbiAgICBcbiAgICBkZiA9IGRmLm1lcmdlKGV2aWRlbmNlLCBvbj1bJ0NvbnRlc3RhbnRfWScsICdNb250eV9aJ10pXG4gICAgXG4gICAgIyBDYWxjdWxhdGUgUG9zdGVyaW9yIFAoWGkgfCBZaiwgWmspID0gSm9pbnQgLyBFdmlkZW5jZVxuICAgIGRmWydQb3N0ZXJpb3InXSA9IGRmLmFwcGx5KGxhbWJkYSByb3c6IHJvd1snSm9pbnQnXSAvIHJvd1snRXZpZGVuY2UnXSBpZiByb3dbJ0V2aWRlbmNlJ10gPiAwIGVsc2UgMC4wLCBheGlzPTEpXG4gICAgXG4gICAgcmV0dXJuIGRmXG5cbmFsbF9yZXN1bHRzID0gY2FsY3VsYXRlX2Z1bGxfbW9udHlfaGFsbF9kZXRhaWxzKClcblxuIyBTZXBhcmF0ZSByZXN1bHRzIGludG8gdmFsaWQgKFN0YXkvU3dpdGNoKSBhbmQgaW52YWxpZFxuc3RheV92YWxpZCA9IGFsbF9yZXN1bHRzWyhhbGxfcmVzdWx0c1snQ2FyX1gnXSA9PSBhbGxfcmVzdWx0c1snQ29udGVzdGFudF9ZJ10pICYgKGFsbF9yZXN1bHRzWydMaWtlbGlob29kJ10gPiAwKV1cbnN3aXRjaF92YWxpZCA9IGFsbF9yZXN1bHRzWyhhbGxfcmVzdWx0c1snQ2FyX1gnXSAhPSBhbGxfcmVzdWx0c1snQ29udGVzdGFudF9ZJ10pICYgKGFsbF9yZXN1bHRzWydMaWtlbGlob29kJ10gPiAwKV1cbmludmFsaWRfcmVzdWx0cyA9IGFsbF9yZXN1bHRzW2FsbF9yZXN1bHRzWydMaWtlbGlob29kJ10gPT0gMF1cblxuIyBQcmludCBhbGwgMjcgY29tYmluYXRpb25zIGluIGdyb3VwZWQgc2VjdGlvbnNcbnByaW50KFwiLS0tIFZBTElEIE9VVENPTUVTIFdIRVJFIGkgPSBqIChTVEFZKSAtLS1cIilcbnByaW50KHN0YXlfdmFsaWRbWydDYXJfWCcsICdDb250ZXN0YW50X1knLCAnTW9udHlfWicsICdMaWtlbGlob29kJywgJ1Bvc3RlcmlvciddXS50b19zdHJpbmcoaW5kZXg9RmFsc2UpKVxuXG5wcmludChcIlxcbi0tLSBWQUxJRCBPVVRDT01FUyBXSEVSRSBpICE9IGogKFNXSVRDSCkgLS0tXCIpXG5wcmludChzd2l0Y2hfdmFsaWRbWydDYXJfWCcsICdDb250ZXN0YW50X1knLCAnTW9udHlfWicsICdMaWtlbGlob29kJywgJ1Bvc3RlcmlvciddXS50b19zdHJpbmcoaW5kZXg9RmFsc2UpKVxuXG5wcmludChcIlxcbi0tLSBJTlZBTElEIENPTUJJTkFUSU9OUyAoTElLRUxJSE9PRCA9IDApIC0tLVwiKVxucHJpbnQoaW52YWxpZF9yZXN1bHRzW1snQ2FyX1gnLCAnQ29udGVzdGFudF9ZJywgJ01vbnR5X1onLCAnTGlrZWxpaG9vZCcsICdQb3N0ZXJpb3InXV0udG9fc3RyaW5nKGluZGV4PUZhbHNlKSlcblxuIyBWZXJpZmljYXRpb24gb2YgdG90YWwgY291bnRzXG5wcmludChmXCJcXG5Ub3RhbCBjb21iaW5hdGlvbnMgcHJpbnRlZDoge2xlbihzdGF5X3ZhbGlkKSArIGxlbihzd2l0Y2hfdmFsaWQpICsgbGVuKGludmFsaWRfcmVzdWx0cyl9XCIpIn0=
+</script>
+</div>
+</div>
+<p>The posterior is <span class="math inline">\(P(X_i |&nbsp;Y_j, Z_k)\)</span> - so we should interpret the case where <span class="math inline">\(i=j\)</span> as the <em>probability of the car being behind the door initially chosen by the contestant, given that Monty opened door <span class="math inline">\(k\)</span></em>. In other words, the probability of winning by staying with the chosen door.</p>
+<section id="result-for-case-ij-i.e.-contestant-initially-chose-correct-door" class="level2">
+<h2 class="anchored" data-anchor-id="result-for-case-ij-i.e.-contestant-initially-chose-correct-door">Result for case <span class="math inline">\(i=j\)</span>, i.e.&nbsp;contestant initially chose correct door</h2>
+<p>In this case, the calculations show the posterior being <span class="math inline">\(33.3\%\)</span>, or</p>
+<p><span class="math display">\[
+P(X_i | Y_j, Z_k) = 1/3 \hspace{0.5 cm} \text{ if } i=j, \text{ for all } k \notin \{i,j\}.
+\]</span></p>
+<p>This means that the posterior probability of the car <strong>not</strong> being behind the chosen door is <span class="math display">\[
+P(\neg X_i | Y_j, Z_k) = 1- P(X_i | Y_j, Z_k) = 2/3 \hspace{0.5 cm} \text{ if } i=j, \text{ for all } k \notin \{i, j\}.
+\]</span></p>
+<p>Which means, we should switch to the other door.</p>
+</section>
+<section id="result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door" class="level2">
+<h2 class="anchored" data-anchor-id="result-for-case-i-neq-j-i.e.-contestant-initially-chose-wrong-door">Result for case <span class="math inline">\(i \neq j\)</span>, i.e.&nbsp;contestant initially chose wrong door</h2>
+<p>For the other case, our posterior <span class="math inline">\(P(X_i |&nbsp;Y_j, Z_k)\)</span> for <span class="math inline">\(i \neq j\)</span> is interpreted as <em>the probability of the car being behind door <span class="math inline">\(i\)</span> given that the contestant initially chose a different door <span class="math inline">\(j\)</span>, and Monty openend door <span class="math inline">\(k\)</span></em>. In simpler terms, the probability of the car being behind the other remaining door.</p>
+<p>The calculations yield a probability of <span class="math inline">\(66.7\%\)</span> of the car being behind the other door, i.e.</p>
+<p><span class="math display">\[
+P(X_i | Y_j, Z_k) = 2/3 \hspace{0.5 cm} \text{ if } i \neq j, \text{ for all } k \notin \{i,j\}.
+\]</span></p>
+<p>By the same logic as above, for this case, the probability of winning by staying is <span class="math display">\[
+P(\neg X_i | Y_j, Z_k) = 1- P(X_i | Y_j, Z_k) = 1/3 \hspace{0.5 cm} \text{ if } i \neq j, \text{ for all } k \notin \{i, j\}.
+\]</span></p>
+<p>So we should also switch to the other door.</p>
+<p>Therefore, we have shown, for all possible cases, the probability of winning being higher by switching to the other door.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The obtained result using the Bayesian approach to the problem yields the same result as was described in <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a> - which we also reinforced by simulation. What we have done differently in this solution - is to have the mathematics yield the outcome, without having to rely upon intuition or insight.</p>
+<p>The solution for the optimal strategy being to always switch doors does however not mean that it will guarantee a win in each trial - not at all. Instead, what this solution tells us, is that by following the strategy of switching doors, we can expect to win in 66.7% of the time, and lose in 33.3% of the time. We should observe this to be the outcome in repeated trials and approach these values as more and more trials are done. This is what we observed in the simulation in <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a>.</p>
+<p>However, keep in mind, the above calculations are not a <em>simulation</em> of the problem, but exact mathematical calculations. The solution is therefore exact and complete, given our assumptions of the problem and our Bayesian interpretation of probabilities.</p>
+<p>There is something inherently beautiful in having mathematics, the language of reason and logic, yield us the solution without having any prior bias towards the outcome - although in this case we have an expectation towards the outcome, but none of that was part of the derivation of the above solution.</p>
+<p>Given the debates this problem has stirred in the past - based on its counterintuitive solution - a mathematical approach is indeed the only way to justify the outcome.</p>
+
+
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyIuLi8uLi8uLi9DTkFNRSJd
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../articles/01_monty_hall/02_part_2";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("www\.kristjanrox\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright Kristjan Röx. All rights reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
