@@ -85,7 +85,6 @@ gtag('config', 'G-2EKD2JNKMF', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 <script type="module" src="../../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<meta name="quarto:status" content="draft">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -122,7 +121,7 @@ window.Quarto = {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -234,6 +233,12 @@ window.Quarto = {
 <p>In <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a>, the solution to the Monty Hall problem required a certain level of intuition to be accepted. The fact that the prior 2/3 probability of choosing the wrong door being fully transferred to the other door that Monty did not open may not be immediately obvious. Therefore, the reasoning provided is not complete.</p>
 <p>I prefer to let the mathematics - the language of logic and reason - yield a justified solution, without needing to accept a solution based on intuition.</p>
 <p>I will utilize the dependent nature of both Monty’s choices and the choice the contestant has to make after being offered the choice of switching or staying. This dependency between variables indicates the probabilities being <em>conditional probabilities</em>, which are conditional on what information one has at the time of making a choice. For example, Monty chooses his door based on where the car is (which he knows) and what door the contestant chooses. Given this information, the probability that Monty will choose each door is not equal, and may be biased to one or more doors. Similarly, the contestant will have to make a choice on whether to switch based on his initially chosen door and the door that Monty opened.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/oppenheimer_math.jpg" class="img-fluid figure-img"></p>
+<figcaption><em>Oppie tells us to move ahead with the math.</em></figcaption>
+</figure>
+</div>
 <section id="conditional-probabilities" class="level1">
 <h1>Conditional probabilities</h1>
 <p>Let’s begin by defining some variables for our problem.</p>
