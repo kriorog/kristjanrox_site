@@ -55,7 +55,7 @@
 </section>
 <section id="the-key-to-the-solution---bayes-law" class="level1">
 <h1>The key to the solution - Bayes’ Law</h1>
-<p>Note that none of the probabilities we could model based on the problem are the one we need, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%20Y_j,%20Z_k)">. However, we can relate this desired conditional probability with the one conditional probability we could model, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(Z_k%20%7C%20X_i,%20Y_j)"> using Bayes’ Law.</p>
+<p>Note that the only conditional probability we can model <img src="https://latex.codecogs.com/png.latex?P(Z_k%20%7C%20X_i,%20Y_j)"> is not the one we need, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%20Y_j,%20Z_k)">. However, we can relate this desired conditional probability with the one conditional probability we can model, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(Z_k%20%7C%20X_i,%20Y_j)">, using Bayes’ Law.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Bayes' Law">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
