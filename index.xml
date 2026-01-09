@@ -41,17 +41,14 @@
 <li><p>When offered the switch, the contestant strategy would be to choose the door with the highest probability of hiding the car - given the initially chosen <img src="https://latex.codecogs.com/png.latex?Y"> and the door <img src="https://latex.codecogs.com/png.latex?Z"> opened by Monty.</p></li>
 <li><p>In mathematical terms, the strategy would be to choose door <img src="https://latex.codecogs.com/png.latex?X"> with the highest probability <img src="https://latex.codecogs.com/png.latex?P(X%20%7C%20Y,%20Z)">, i.e.&nbsp;the <em>the probability of <img src="https://latex.codecogs.com/png.latex?X"> given <img src="https://latex.codecogs.com/png.latex?Y"> and <img src="https://latex.codecogs.com/png.latex?Z"></em>. This is a <em>conditional probability</em> as it is dependent on known values of <img src="https://latex.codecogs.com/png.latex?Y"> and <img src="https://latex.codecogs.com/png.latex?Z">.</p></li>
 </ul>
-<section id="how-to-interpret-the-conditional-probabilities" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-interpret-the-conditional-probabilities">How to interpret the conditional probabilities?</h2>
 <p>Given the information in the problem, deducing the desired probability <img src="https://latex.codecogs.com/png.latex?P(X%20%7C%C2%A0Y,%20Z)"> by inspection is difficult. It is what we are trying to justify by intuition in <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a> on this problem as being 2/3 in favour of switching.</p>
-</section>
-</section>
-<section id="inspection-of-each-variable-in-the-problem" class="level1">
-<h1>Inspection of each variable in the problem</h1>
+<section id="inspection-of-each-variable-in-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="inspection-of-each-variable-in-the-problem">Inspection of each variable in the problem</h2>
 <p>We can however see that the contestant chooses his initial door at random, i.e.&nbsp;each is equally likely to be chosen. Therefore we can reasonably assume the contestant choosing a door at random, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(Y_j)=1/3"> for each door <img src="https://latex.codecogs.com/png.latex?j%5Cin%5C%7B1,2,3%5C%7D">.</p>
 <p>Also, the car’s location is not dependent on anything. We can thus assume it being placed behind a door at random, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?P(X_i)=1/3"> for each <img src="https://latex.codecogs.com/png.latex?i%20%5Cin%20%5C%7B1,2,3%5C%7D">.</p>
 <p>Therefore, the variables <img src="https://latex.codecogs.com/png.latex?X"> and <img src="https://latex.codecogs.com/png.latex?Y"> are independent random variables.</p>
 <p>However, Monty’s chosen door <img src="https://latex.codecogs.com/png.latex?Z"> is dependent on <img src="https://latex.codecogs.com/png.latex?X"> and <img src="https://latex.codecogs.com/png.latex?Y">. Therefore, we can’t model <img src="https://latex.codecogs.com/png.latex?P(Z_k)"> for each <img src="https://latex.codecogs.com/png.latex?k%20%5Cin%20%5C%7B1,2,3%5C%7D"> based on the structure and mechanics of the problem. However, we can model the conditional probability of what Monty does, given where the car is and what door the contestant initially chooses. Therefore, we can model <img src="https://latex.codecogs.com/png.latex?P(Z_k%20%7C%20X_i,%20Y_j)"> for various combinations <img src="https://latex.codecogs.com/png.latex?(i,j,k)">.</p>
+</section>
 </section>
 <section id="the-key-to-the-solution---bayes-law" class="level1">
 <h1>The key to the solution - Bayes’ Law</h1>
