@@ -126,9 +126,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 </script>
 </div>
 </div>
-<p>The posterior is <img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%C2%A0Y_j,%20Z_k)"> - so we should interpret the case where <img src="https://latex.codecogs.com/png.latex?i=j"> as the <em>probability of the car being behind the door initially chosen by the contestant, given that Monty opened door <img src="https://latex.codecogs.com/png.latex?k"></em>. In other words, the probability of winning by staying with the chosen door.</p>
 <section id="result-for-case-ij-i.e.-contestant-initially-chose-correct-door" class="level2">
 <h2 class="anchored" data-anchor-id="result-for-case-ij-i.e.-contestant-initially-chose-correct-door">Result for case <img src="https://latex.codecogs.com/png.latex?i=j">, i.e.&nbsp;contestant initially chose correct door</h2>
+<p>For this case, we interpret the posterior <img src="https://latex.codecogs.com/png.latex?P(X_i%20%7C%C2%A0Y_j,%20Z_k)"> with <img src="https://latex.codecogs.com/png.latex?i%20=%20j"> as the <em>probability of the car being behind the door initially chosen by the contestant, given that Monty opened door <img src="https://latex.codecogs.com/png.latex?k"></em>. In other words, the probability of winning by staying with the chosen door.</p>
 <p>In this case, the calculations show the posterior being <img src="https://latex.codecogs.com/png.latex?33.3%5C%25">, or</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AP(X_i%20%7C%20Y_j,%20Z_k)%20=%201/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i=j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cnotin%20%5C%7Bi,j%5C%7D.%0A"></p>
 <p>This means that the posterior probability of the car <strong>not</strong> being behind the chosen door is <img src="https://latex.codecogs.com/png.latex?%0AP(%5Cneg%20X_i%20%7C%20Y_j,%20Z_k)%20=%201-%20P(X_i%20%7C%20Y_j,%20Z_k)%20=%202/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i=j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cnotin%20%5C%7Bi,%20j%5C%7D.%0A"></p>
