@@ -22,7 +22,11 @@
 
 <p>In <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a>, the solution to the Monty Hall problem required a certain level of intuition to be accepted. The fact that the prior 2/3 probability of choosing the wrong door being fully transferred to the other door that Monty did not open may not be immediately obvious. Therefore, the reasoning provided is not complete.</p>
 <p>I prefer to let the mathematics - the language of logic and reason - yield a justified solution, without needing to accept a solution based on intuition.</p>
-<p>I will utilize the dependent nature of both Monty’s choices and the choice the contestant has to make after being offered the choice of switching or staying. This dependency between variables indicates the probabilities being <em>conditional probabilities</em>, which are conditional on what information one has at the time of making a choice. For example, Monty chooses his door based on where the car is (which he knows) and what door the contestant chooses. Given this information, the probability that Monty will choose each door is not equal, and may be biased to one or more doors. Similarly, the contestant will have to make a choice on whether to switch based on his initially chosen door and the door that Monty opened.</p>
+<p>In this article I will describe two solution approaches:</p>
+<ol type="1">
+<li><p>Using the dependent nature of both Monty’s choices and the choice the contestant has to make after being offered the choice of switching or staying to define <em>conditional probabilities</em>. These are probabilities which are conditional on what information one has at the time of making a choice. For example, Monty chooses his door based on where the car is (which he knows) and what door the contestant chooses. Given this information, the probability that Monty will choose each door is not equal, and may be biased to one or more doors. Similarly, the contestant will have to make a choice on whether to switch based on his initially chosen door and the door that Monty opened.</p></li>
+<li><p>Deriving a solution by counting all of the different possible scenarios that can occur and what the contestant should do in each case. Then count how often a switch or stay choice should be made. The frequency of each choice relative to the total number of possible cases will help us determine which choice is better.</p></li>
+</ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="www.kristjanrox.com/articles/01_monty_hall/02_part_2/figures/oppenheimer_math.jpg" class="img-fluid figure-img"></p>
@@ -139,15 +143,24 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <p>By the same logic as above, for this case, the probability of winning by staying is <img src="https://latex.codecogs.com/png.latex?%0AP(%5Cneg%20X_i%20%7C%20Y_j,%20Z_k)%20=%201-%20P(X_i%20%7C%20Y_j,%20Z_k)%20=%201/3%20%5Chspace%7B0.5%20cm%7D%20%5Ctext%7B%20if%20%7D%20i%20%5Cneq%20j,%20%5Ctext%7B%20for%20all%20%7D%20k%20%5Cnotin%20%5C%7Bi,%20j%5C%7D.%0A"></p>
 <p>So we should also switch to the other door.</p>
 </section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion-on-bayesian-solution" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-on-bayesian-solution">Conclusion on Bayesian solution</h2>
 <p>The obtained results show, for all possible cases, the probability of winning being higher by switching to the other door.</p>
 <p>This results, obtained using the Bayesian approach is the same as the one described in <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a> - which we also reinforced by simulation. What we have done differently in this solution - is to have the mathematics yield the outcome, without having to rely upon unjustified intuition or insight.</p>
 <p>The solution for the optimal strategy being to always switch doors does however not mean that it will guarantee a win in each trial - not at all. Instead, what this solution tells us, is that by following the strategy of switching doors, we can expect to win in 66.7% of the time, and lose in 33.3% of the time. We should observe this to be the outcome in repeated trials and approach these values as more and more trials are done. This is what we observed in the simulation in <a href="../../../articles/01_monty_hall/01_part_1/monty_hall.html">Part 1</a>.</p>
 <p>However, keep in mind, the above calculations are not a <em>simulation</em> of the problem, but exact mathematical calculations. The solution is therefore exact and complete, given our assumptions of the problem and our Bayesian interpretation of probabilities.</p>
 <p>There is something inherently beautiful in having mathematics, the language of reason and logic, yield us the solution without having any prior bias towards the outcome - although in this case we have an expectation towards the outcome, but none of that was part of the derivation of the above solution.</p>
 <p>Given the debates this problem has stirred in the past - based on its counterintuitive solution - a mathematical approach is indeed the only way to justify the outcome.</p>
+</section>
+</section>
+<section id="another-solution-by-counting" class="level1">
+<h1>Another solution by counting</h1>
+<p>There is another way to justify the optimal strategy being to switch choices. If we review the previous Bayesian solution, we can see the probabilities are dependent on whether the contestant initially chose the right door or not. Let’s look at each scenario in more details.</p>
+<p>The total number of different possible combinations of the car’s door <img src="https://latex.codecogs.com/png.latex?X"> and the contestant’s chosen door <img src="https://latex.codecogs.com/png.latex?Y"> are <img src="https://latex.codecogs.com/png.latex?3%5E2=9">, i.e.&nbsp;there are 3 possible doors for each. The number of combinations where the contestant chooses the right door is only <img src="https://latex.codecogs.com/png.latex?3">, i.e.&nbsp;there are 3 doors for the first choice but only 1 door for the second choice.</p>
+<p>Consequently, the number of combinations where a wrong door is chosen is <img src="https://latex.codecogs.com/png.latex?9-3=6">. So the contestant will choose correctly, assuming random choices, only <img src="https://latex.codecogs.com/png.latex?3/9=1/3"> of the time and incorrectly <img src="https://latex.codecogs.com/png.latex?2/3"> of the time. So, we repeat our initially conclusion that the contestant has a <img src="https://latex.codecogs.com/png.latex?1/3"> probability of choosing the right door.</p>
+<p>When the contestant chooses the right door, Monty will have two doors to choose from which do not have the car. Regardless of which one he opens, the other remanining door will not have the car. Therefore, the contestant should not switch doors in these 3 cases out of all 9 possible.</p>
+<p>However, for the other case, where the contestant chooses the wrong door, then Monty only has one door to choose from which does not have the car. The other remaining door will be the one with the car and the contestant should switch doors. This happens 6 times out of the possible 9 cases.</p>
+<p>So the number of cases where the contestant should stay is <img src="https://latex.codecogs.com/png.latex?1/3"> and the number of cases where he should switch is <img src="https://latex.codecogs.com/png.latex?2/3"> out of all possible cases. Therefore, we reach the same conclusion regarding the frequency of each choice in the game, i.e.&nbsp;the contestant should choose a switch each time which will be successful in <img src="https://latex.codecogs.com/png.latex?2/3"> of repeated trials (in the limit). However, this counting that we have done is based on Monty’s bias and what doors he has to choose from in each possible combination of the doors where the car is and what door the contestant chooses, which is akin to our conditional probability approach using the Bayes’ Law.</p>
 
 
 <script type="pyodide-data">
