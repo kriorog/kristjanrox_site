@@ -21,7 +21,7 @@
 
 
 
-<p>Consider a random event <img src="https://latex.codecogs.com/png.latex?X"> having probability <img src="https://latex.codecogs.com/png.latex?p(X)=0">. Does it mean <img src="https://latex.codecogs.com/png.latex?X"> cannot occur, i.e.&nbsp;is impossible?</p>
+<p>Consider a random event <img src="https://latex.codecogs.com/png.latex?X"> having probability <img src="https://latex.codecogs.com/png.latex?p(X)=0">. Does <img src="https://latex.codecogs.com/png.latex?p(X)=0"> mean <img src="https://latex.codecogs.com/png.latex?X"> cannot occur, i.e.&nbsp;is impossible?</p>
 <p>At face value, the question seems harmless, but as soon as one starts to attempt an answer to it using mathematical logic alone - one realizes that probability theory is a symphony of both logic and philosophy.</p>
 <p>The notion of <em>probabilities</em> is subject to interpretation, and can be argued in a philosophical sense, as it is an abstraction of reality. Consequently, there are various intepretations and approaches to probability theory. However, given a specific interpretation of what probability is, we base our logic on certain <em>axioms of probability</em>, which are mathematical constructs and not subject to interpretation.</p>
 <section id="an-informal-approach" class="level1">
