@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>www.kristjanrox.com/articles/02_newton_2nd_law/newton_2nd_law.html</loc>
+    <lastmod>2026-02-01T09:07:38.243Z</lastmod>
+  </url>
+  <url>
     <loc>www.kristjanrox.com/articles/01_monty_hall/02_part_2/monty_hall_2.html</loc>
-    <lastmod>2026-01-20T20:40:58.223Z</lastmod>
+    <lastmod>2026-02-01T09:07:38.241Z</lastmod>
   </url>
   <url>
     <loc>www.kristjanrox.com/about.html</loc>
-    <lastmod>2026-01-20T20:40:58.189Z</lastmod>
+    <lastmod>2026-02-01T09:07:38.207Z</lastmod>
   </url>
   <url>
     <loc>www.kristjanrox.com/index.html</loc>
-    <lastmod>2026-01-20T20:40:58.230Z</lastmod>
+    <lastmod>2026-02-01T09:07:38.247Z</lastmod>
   </url>
   <url>
     <loc>www.kristjanrox.com/articles/01_monty_hall/01_part_1/monty_hall.html</loc>
-    <lastmod>2026-01-20T20:40:58.221Z</lastmod>
+    <lastmod>2026-02-01T09:07:38.239Z</lastmod>
   </url>
   <url>
     <loc>www.kristjanrox.com/articles/04_zero_probability/01_part 1/zero_prob_part_1.html</loc>
-    <lastmod>2026-01-20T20:40:58.228Z</lastmod>
+    <lastmod>2026-02-01T09:07:38.245Z</lastmod>
   </url>
 </urlset>
