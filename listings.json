@@ -2,10 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/02_newton_2nd_law/newton_2nd_law.html",
       "/articles/04_zero_probability/01_part 1/zero_prob_part_1.html",
       "/articles/01_monty_hall/02_part_2/monty_hall_2.html",
-      "/articles/01_monty_hall/01_part_1/monty_hall.html",
-      "/articles/02_newton_2nd_law/newton_2nd_law.html"
+      "/articles/01_monty_hall/01_part_1/monty_hall.html"
     ]
   }
 ]
